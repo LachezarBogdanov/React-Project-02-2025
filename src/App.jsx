@@ -3,14 +3,14 @@ import './App.css'
 import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 
-import Cart from './components/Home/Cart/Cart';
+import Edit from './components/Home/Edit/Edit';
 
 function App() {
 
   return (
     <>
     <Header />
-    <Cart />
+    <Edit />
     <Footer />
     </>
   )
