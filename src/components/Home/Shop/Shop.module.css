@@ -1,0 +1,142 @@
+header {
+    background-color: rgb(21, 21, 21);
+}
+
+section.title {
+    text-align: center;
+    padding-top: 2em;
+    margin-bottom: 7em;
+}
+
+section.title h1{
+    font-size: 3em;
+    padding-bottom: 0.7em;
+}
+
+section.title p{
+    font-size: 1.3em;
+    position: relative;
+}
+
+section.title p::before{
+    content: '';
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: -5%;
+}
+
+section.title p::after{
+    content: '';
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    right: -5%;
+    top: 50%;
+}
+
+.select {
+    width: 79%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.select select{
+    border: none;
+    background-color: #eee;
+}
+
+.select p{
+    color: #666;
+}
+
+section.all-products {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 4.5em;
+}
+
+section.all-products .product {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 5em;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 6.5em;
+}
+
+section.all-products .product img{
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
+    filter: blur(0);
+    transition: 0.3s ease-in;
+}
+
+ section.all-products .product:hover img {
+    filter: blur(2px);
+  }
+
+  section.all-products .product:hover .center-icon {
+    opacity: 3;
+  }
+
+  section.all-products .product .center-icon {
+    position: absolute;
+    background-color: red;
+    top: calc(50% - 1em);
+    left: calc(50% - 1.3em);
+    padding: 0.5em 0.8em;
+    border-radius: 50%;
+    color: #fff;
+    background-color: black;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+section.all-products .product h2{
+    color: black;
+    font-size: 1.2em;
+    margin-left: 0.5em;
+}
+
+section.all-products .product p:nth-of-type(1){
+    color: #666;
+    padding-bottom: 0.5em;
+}
+
+section.all-products .product p{
+    color: #333;
+    font-weight: 600;
+    margin-left: 0.5em;
+}
+
+p.type {
+    font-size: 0.8em;
+}
+
+section.desrpition {
+    width: 80%;
+    margin-bottom: 4em;
+}
+
+section.desrpition h4,
+section.desrpition p{
+    padding-bottom: 1em;
+}
+
+section.desrpition a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}

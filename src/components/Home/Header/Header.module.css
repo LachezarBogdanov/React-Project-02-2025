@@ -1,0 +1,33 @@
+header {
+    padding: 1.5em;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+header nav {
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+    gap: 30em;
+}
+
+.logo {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+header nav ul li,
+header nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1.5em;
+}
