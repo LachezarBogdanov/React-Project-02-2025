@@ -1,16 +1,16 @@
 import './App.css'
-import Footer from './components/Home/Footer/Footer'
-import Header from './components/Home/Header/Header'
-import Home from './components/Home/Home'
-import Login from './components/Home/Login/Login'
-import Register from './components/Home/Register/Register'
+
+import Footer from './components/Home/Footer/Footer';
+import Header from './components/Home/Header/Header';
+
+import Details from './components/Home/Details/Details';
 
 function App() {
 
   return (
     <>
     <Header />
-    <Register />
+    <Details />
     <Footer />
     </>
   )

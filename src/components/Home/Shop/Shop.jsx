@@ -7,6 +7,7 @@ export default function Shop() {
         <h1>WheyPro - Nutritional supplements</h1>
         <p>Free delivery on orders over 100 BGN with your favorite courier</p>
         </section>
+        <main>
         <div className={styles.select}>
         <p>Showing all N products</p>
         <select name="first-newest" id="first-newest">
@@ -15,90 +16,90 @@ export default function Shop() {
         <option value="newest">Most expensive</option>
         </select>
         </div>
-        <section className="all-products">
+        <section className={styles.allProducts}>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         <a href="#" className={styles.product}>
         <img
-        src="./photos/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
+        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
         alt="#"
         />
-        <div className="centerIcon">+</div>
+        <div className={styles.centerIcon}>+</div>
         <h2>Name</h2>
-        <p className="type">30 sasheta</p>
+        <p className={styles.type}>30 sasheta</p>
         <p>42lv</p>
         </a>
         </section>
-        <section className="desrpition">
-        <h4 className="nutrition-title">
+        <section className={styles.desrpition}>
+        <h4>
         Nutritional supplements for every sports enthusiast
         </h4>
         <p>
@@ -143,6 +144,7 @@ export default function Shop() {
         rapid accumulation of muscle mass and the improvement of sports results.
         </p>
         </section>
+        </main>
         </>
         
     )

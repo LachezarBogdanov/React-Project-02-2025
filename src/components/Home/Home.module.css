@@ -3,39 +3,6 @@ body {
     min-height: 100dvh;
 }
 
-header {
-    padding: 1.5em;
-    background-color: rgb(255, 255, 255);
-    position: relative;
-}
-
-header nav {
-    display: flex;
-    gap: 3em;
-    align-items: center;
-    justify-content: center;
-    gap: 30em;
-}
-
-.logo {
-    display: block;
-    text-decoration: none;
-    color: black;
-    font-size: 1.7em;
-    font-weight: bold;
-}
-
-header nav ul li,
-header nav ul li a {
-    display: block;
-    text-decoration: none;
-    color: black;
-}
-
-header nav ul {
-    display: flex;
-    gap: 1.5em;
-}
 
 section.banner {
     width: 100%;
@@ -417,50 +384,4 @@ article.allComments {
 
 .commentBtn:hover {
     background-color: darkred;
-}
-
-/* Footer */
-footer {
-    background-color: black;
-    color: #fff;
-    padding-block: 3em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-footer h1 {
-    font-size: 2.2em;
-    padding-bottom: 1em;
-}
-
-.footerWrapper {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    padding-bottom: 3em;
-}
-
-.footerWrapper section p{
-    color: #777;
-}
-
-.icons {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    text-align: center;
-}
-
-.iconsWrapper {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.icons a{
-    font-size: 1.5em;
-    text-decoration: none;
-    color: #fff;
 }

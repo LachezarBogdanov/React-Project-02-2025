@@ -1,0 +1,183 @@
+body {
+    background-color: #fff;
+    min-height: 100dvh;
+}
+
+.product {
+    display: flex;
+    width: 100%;
+    max-width: 90%;
+    margin: 4em auto;
+    height: 700px;
+    gap: 2.5em;
+}
+
+.product .productImg img {
+    width: 100%;
+    height: auto;
+}
+
+.product .productImg {
+    flex: 1 1 50%;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.2);
+}
+
+.product .productDetails {
+    flex: 1 1 50%;
+    margin-top: 1em;
+}
+
+.product .productDetails h1{
+    font-size: 1.8em;
+}
+
+.product .productDetails h2{
+    padding-bottom: 0.5em;
+}
+
+.product .productDetails p.price{
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-bottom: 2em;
+}
+
+article.flavour {
+    margin-bottom: 2em;
+}
+
+article.flavour p{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+}
+
+article.flavour select{
+    width: 100%;
+    padding: 0.8em;
+    background-color: #e5e4e4;
+    border-radius: 2em;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+article.flavour select option{
+    background-color: #e5e4e4;
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    color: #777;
+}
+
+.size {
+    margin-bottom: 2em;
+}
+
+.size p:nth-child(1) {
+    color: #555;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.size p:nth-child(2) {
+    padding-left: 1em;
+    background-color: #e5e4e4;
+    width: 70px;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 5em;
+    border: 1px solid #999;
+    color: #444;
+}
+
+article.quantity {
+    margin-bottom: 2em;
+}
+
+article.quantity p{
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #555;
+}
+
+section.product a.addToCart {
+    text-decoration: none;
+    display: block;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    padding: 0.7em;
+    border-radius: 2em;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+.productDetails .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editDelete {
+    display: flex;
+    gap: 2em;
+}
+
+.edit {
+    text-decoration: none;
+    display: block;
+    background-color: rgb(182, 251, 182);
+    padding: 0.5em 1.5em;
+    color: green;
+    border-radius: 1em;
+}
+
+.delete {
+    text-decoration: none;
+    display: block;
+    background-color: rgb(251, 2, 2);
+    padding: 0.5em 1em;
+    color: #fff;
+    border-radius: 1em;
+}
+
+.accordion {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+  }
+  
+  .accordionHeader {
+    display: block;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .accordionHeader::after {
+    content: "▼";
+    font-size: 12px;
+    position: absolute;
+    right: 15px;
+    transition: 0.2s ease-in;
+  }
+  
+  .accordionContent {
+    max-height: 0;
+    overflow-y: scroll;
+    transition: 0.3s ease-in;
+    padding: 0 15px;
+  }
+  
+  .accordionContent p {
+    margin: 10px 0;
+  }
+  
+  input[type="checkbox"]:checked + .accordionHeader::after {
+    transform: rotate(-180deg);
+  }
+  
+  input[type="checkbox"]:checked + .accordionHeader + .accordionContent {
+    max-height: 200px; /* Adjust according to content */
+    padding: 10px 15px;
+  }

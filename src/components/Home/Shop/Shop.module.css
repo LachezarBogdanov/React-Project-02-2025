@@ -1,5 +1,12 @@
-header {
-    background-color: rgb(21, 21, 21);
+body {
+    background-color: #fff;
+    min-height: 100dvh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.title {
@@ -26,7 +33,7 @@ section.title p::before{
     background-color: black;
     position: absolute;
     top: 50%;
-    left: -5%;
+    left: 10%;
 }
 
 section.title p::after{
@@ -36,7 +43,7 @@ section.title p::after{
     height: 3px;
     background-color: black;
     position: absolute;
-    right: -5%;
+    right: 10%;
     top: 50%;
 }
 
@@ -56,7 +63,7 @@ section.title p::after{
     color: #666;
 }
 
-section.all-products {
+section.allProducts {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -65,7 +72,7 @@ section.all-products {
     margin-bottom: 4.5em;
 }
 
-section.all-products .product {
+section.allProducts .product {
     width: 250px;
     height: 250px;
     margin-bottom: 5em;
@@ -74,7 +81,7 @@ section.all-products .product {
     margin-bottom: 6.5em;
 }
 
-section.all-products .product img{
+section.allProducts .product img{
     width: 100%;
     height: auto;
     box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
@@ -82,15 +89,15 @@ section.all-products .product img{
     transition: 0.3s ease-in;
 }
 
- section.all-products .product:hover img {
+ section.allProducts .product:hover img {
     filter: blur(2px);
   }
 
-  section.all-products .product:hover .center-icon {
+  section.allProducts .product:hover .centerIcon {
     opacity: 3;
   }
 
-  section.all-products .product .center-icon {
+  section.allProducts .product .centerIcon {
     position: absolute;
     background-color: red;
     top: calc(50% - 1em);
@@ -104,18 +111,18 @@ section.all-products .product img{
     transition: opacity 0.3s ease-in;
   }
 
-section.all-products .product h2{
+section.allProducts .product h2{
     color: black;
     font-size: 1.2em;
     margin-left: 0.5em;
 }
 
-section.all-products .product p:nth-of-type(1){
+section.allProducts .product p:nth-of-type(1){
     color: #666;
     padding-bottom: 0.5em;
 }
 
-section.all-products .product p{
+section.allProducts .product p{
     color: #333;
     font-weight: 600;
     margin-left: 0.5em;
