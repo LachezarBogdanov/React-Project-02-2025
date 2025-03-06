@@ -3,7 +3,7 @@ import styles from './Login.module.css'
 export default function Login() {
     return (
         <>
-        <main>
+        <main className={styles.loginMain}>
         <form action="#">
         <h2>Login</h2>
         <div className={styles.field}>
@@ -29,7 +29,7 @@ export default function Login() {
         Login
         </a>
         <p>
-        Don't have an account? <a href="#">Sign up here</a>
+        Don&apost have an account? <a href="#">Sign up here</a>
         </p>
         </form>
         </main>

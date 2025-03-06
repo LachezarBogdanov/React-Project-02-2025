@@ -1,17 +1,28 @@
-import './App.css'
+import { Route, Routes } from 'react-router';
 
-import Footer from './components/Home/Footer/Footer';
-import Header from './components/Home/Header/Header';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import Shop from './components/Shop/Shop';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import Cart from './components/Cart/Cart';
 
-import Edit from './components/Home/Edit/Edit';
+
 
 function App() {
 
   return (
     <>
-    <Header />
-    <Edit />
-    <Footer />
+        <Header />
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/shop' element={<Shop />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/cart' element={<Cart />} />
+        </Routes>
+        <Footer />
     </>
   )
 }

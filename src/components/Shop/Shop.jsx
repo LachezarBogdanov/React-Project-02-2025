@@ -7,7 +7,7 @@ export default function Shop() {
         <h1>WheyPro - Nutritional supplements</h1>
         <p>Free delivery on orders over 100 BGN with your favorite courier</p>
         </section>
-        <main>
+        <main className={styles.shopMain}>
         <div className={styles.select}>
         <p>Showing all N products</p>
         <select name="first-newest" id="first-newest">
@@ -107,7 +107,7 @@ export default function Shop() {
         products designed specifically to improve your health, fitness performance
         and overall well-being. Whether you are a beginner in training or an
         experienced athlete, here you will find everything you need to to achieve
-        your goals. We offer women's nutritional supplements, men's nutritional
+        your goals. We offer women&apos;s nutritional supplements, men&apos;s nutritional
         supplements and fitness nutritional supplements to meet the needs of every
         athlete.
         </p>
@@ -138,7 +138,7 @@ export default function Shop() {
         </p>
         <a href="#">Muscle mass</a>
         <p>
-        In the "Muscle mass" category, we offer various supplements that help
+        In the &quot;Muscle mass&quot; category, we offer various supplements that help
         increase muscle mass and strength. Here you will find testosterone
         products, proteins, amino acids and other products that contribute to the
         rapid accumulation of muscle mass and the improvement of sports results.

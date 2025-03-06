@@ -2,7 +2,7 @@ import styles from './Register.module.css'
 
 export default function Register (){
     return (
-        <main>
+        <main className={styles.registerMain}>
         <form action="#">
         <h2>Register</h2>
         <div className={styles.field}>

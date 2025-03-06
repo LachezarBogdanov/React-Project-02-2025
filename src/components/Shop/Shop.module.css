@@ -1,12 +1,13 @@
-body {
+/* body {
     background-color: #fff;
     min-height: 100dvh;
-}
+} */
 
-main {
+main.shopMain {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
 }
 
 section.title {
