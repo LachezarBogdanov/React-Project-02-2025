@@ -219,6 +219,7 @@ section.newProducts h1 {
     height: 200px;
     text-decoration: none;
     position: relative;
+    text-align: left;
 }
 
 .newProductsWrapper {
@@ -260,7 +261,7 @@ section.newProducts h1 {
     transition: opacity 0.3s ease-in;
   }
 
-.newProduct p:nth-of-type(1){
+.newProduct h3{
     color: #fff;
     font-weight: bold;
 }
@@ -270,7 +271,7 @@ section.newProducts h1 {
     padding-bottom: 0.5em;
 }
 
-.newProduct p:nth-of-type(3) {
+.newProduct p:nth-of-type(2) {
     color: #fff;
 }
 

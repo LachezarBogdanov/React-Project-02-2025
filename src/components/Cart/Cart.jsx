@@ -1,11 +1,11 @@
-import { Link } from 'react-router'
+// import { Link } from 'react-router'
 import styles from './Cart.module.css'
 
 export default function Cart() {
     return (
             <main  className={styles['cart-main']}>
     <h1>Your Cart</h1>
-    {/* <div className={styles.cartContainer}>
+    <div className={styles.cartContainer}>
         <table className={styles.cartTable}>
         <thead>
             <tr>
@@ -43,12 +43,12 @@ export default function Cart() {
         <button className={styles.applyPromo}>Refresh cart</button>
         <button className={styles.updateCart}>Finish order</button>
         </div>
-    </div> */}
+    </div>
 
-    <div className={styles['no-content']}>
+    {/* <div className={styles['no-content']}>
             <h1>No products in the cart yet!</h1>
             <Link to="/shop" className={styles['btn-no-content']}>Go to shop</Link>
-    </div>
+    </div> */}
 
     <section className={styles.details}>
         <h1>More for you:</h1>

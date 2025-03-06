@@ -7,6 +7,9 @@ import Shop from './components/Shop/Shop';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Cart from './components/Cart/Cart';
+import Details from './components/Details/Details';
+import Edit from './components/Edit/Edit';
+import Create from './components/Create/Create';
 
 
 
@@ -21,6 +24,9 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/details' element={<Details />} />
+            <Route path='/edit' element={<Edit />} />
+            <Route path='/create' element={<Create />} />
         </Routes>
         <Footer />
     </>

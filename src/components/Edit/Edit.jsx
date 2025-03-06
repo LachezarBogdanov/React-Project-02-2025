@@ -2,7 +2,7 @@ import styles from './Edit.module.css'
 
 export default function Edit() {
     return (
-        <main>
+        <main className={styles['edit-main']}>
         <form action="#">
         <h2>Edit</h2>
         <div className={styles.field}>
@@ -29,7 +29,6 @@ export default function Edit() {
         <textarea
         name="desription"
         id="desription"
-        defaultValue={""}
         />
         </div>
         <a className={styles.editBtn} href="#">

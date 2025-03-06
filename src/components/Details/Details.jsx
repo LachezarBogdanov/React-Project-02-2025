@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import styles from './Details.module.css'
 
 export default function Details() {
@@ -10,9 +11,9 @@ export default function Details() {
         <div className={styles.title}>
         <h1>Product name</h1>
         <div className={styles.editDelete}>
-        <a href="#" className={styles.edit}>
+        <Link to="/edit" className={styles.edit}>
         Edit
-        </a>
+        </Link>
         <a href="#" className={styles.delete}>
         Delete
         </a>

@@ -20,12 +20,12 @@ export default function Header (){
                  >
                     SHOP
                 </NavLink>
-                </li>
+            </li>
             <li><NavLink
-                 to="/about"
+                 to="/create"
                   className={({isActive}) => isActive ? styles.active : {}}
                  >
-                    ABOUT US
+                    ADD PRODUCT
                 </NavLink>
             </li>
             <li><NavLink

@@ -4,7 +4,7 @@ export default function Shop() {
     return (
         <>
         <section className={styles.title}>
-        <h1>WheyPro - Nutritional supplements</h1>
+        <h1>Nutritional supplements</h1>
         <p>Free delivery on orders over 100 BGN with your favorite courier</p>
         </section>
         <main className={styles.shopMain}>
@@ -99,7 +99,7 @@ export default function Shop() {
         </a>
         </section>
         <section className={styles.desrpition}>
-        <h4>
+        {/* <h4>
         Nutritional supplements for every sports enthusiast
         </h4>
         <p>
@@ -142,7 +142,7 @@ export default function Shop() {
         increase muscle mass and strength. Here you will find testosterone
         products, proteins, amino acids and other products that contribute to the
         rapid accumulation of muscle mass and the improvement of sports results.
-        </p>
+        </p> */}
         </section>
         </main>
         </>

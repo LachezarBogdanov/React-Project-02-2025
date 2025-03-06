@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import styles from './Register.module.css'
 
 export default function Register (){
@@ -48,7 +49,7 @@ export default function Register (){
         Register
         </a>
         <p>
-        Already have account? <a href="#">Sign in here</a>
+        Already have account? <Link to="/login">Sign in here</Link>
         </p>
         </form>
         </main>

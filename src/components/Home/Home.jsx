@@ -17,7 +17,7 @@ export default function Home () {
             <article className={styles.welcomeMsg}>
             <h1>Welcome to the world of WheyPro</h1>
             <p>
-                ForceLab is the company that supports you in your pursuit of a healthy
+                WheyPro is the company that supports you in your pursuit of a healthy
                 diet and an active lifestyle
             </p>
             <Link to="/shop">ALL PRODUCTS</Link>
@@ -64,34 +64,34 @@ export default function Home () {
         <section className={styles.newProducts}>
         <h1>NEW PRODUCTS</h1>
         <div className={styles.newProductsWrapper}>
-            <a href="#" className={styles.newProduct}>
+            <Link to="/details" className={styles.newProduct}>
             <img src="/pre-workout.jpg" alt="pre" />
             <div className={styles.centerIcon}>+</div>
-            <p>Name of the product</p>
+            <h3>Name of the product</h3>
             <p className={styles.type}>30 sasheta</p>
             <p>50lv</p>
-            </a>
-            <a href="#" className={styles.newProduct}>
+            </Link>
+            <Link to="/details" className={styles.newProduct}>
             <img src="/pre-workout.jpg" alt="pre" />
             <div className={styles.centerIcon}>+</div>
-            <p>Name of the product</p>
+            <h3>Name of the product</h3>
             <p className={styles.type}>30 sasheta</p>
             <p>50lv</p>
-            </a>
-            <a href="#" className={styles.newProduct}>
+            </Link>
+            <Link to="/details" className={styles.newProduct}>
             <img src="/pre-workout.jpg" alt="pre" />
             <div className={styles.centerIcon}>+</div>
-            <p>Name of the product</p>
+            <h3>Name of the product</h3>
             <p className={styles.type}>30 sasheta</p>
             <p>50lv</p>
-            </a>
-            <a href="#" className={styles.newProduct}>
+            </Link>
+            <Link to="/details" className={styles.newProduct}>
             <img src="/pre-workout.jpg" alt="pre" />
             <div className={styles.centerIcon}>+</div>
-            <p>Name of the product</p>
+            <h3>Name of the product</h3>
             <p className={styles.type}>30 sasheta</p>
             <p>50lv</p>
-            </a>
+            </Link>
         </div>
         </section>
         <section className={styles.comments}>

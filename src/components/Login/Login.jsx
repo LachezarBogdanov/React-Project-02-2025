@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import styles from './Login.module.css'
 
 export default function Login() {
@@ -29,7 +30,7 @@ export default function Login() {
         Login
         </a>
         <p>
-        Don&apost have an account? <a href="#">Sign up here</a>
+        Don&apos;t have an account? <Link to="/register">Sign up here</Link>
         </p>
         </form>
         </main>

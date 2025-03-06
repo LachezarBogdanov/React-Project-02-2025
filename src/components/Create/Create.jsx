@@ -1,10 +1,11 @@
 import styles from './Create.module.css'
 
 export default function Create() {
+    //TODO ADD TYPE OPTION MENU 
     return (
-        <main>
+        <main className={styles['main-create']}>
         <form action="#">
-        <h2>Create product</h2>
+        <h2>Add product</h2>
         <div className={styles.field}>
         <input type="text" name="name" id="name" placeholder="Name" />
         <label htmlFor="name">Product name</label>
@@ -26,7 +27,6 @@ export default function Create() {
         <label htmlFor="price">Price</label>
         </div>
         <div className={styles.field}>
-        <label htmlFor="desription">Description</label>
         <textarea
         name="desription"
         id="desription"
