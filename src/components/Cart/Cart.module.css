@@ -162,3 +162,26 @@ main.cart-main {
       box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
       border-radius: 1em;
     }
+
+    .no-content {
+      background-color: #fff;
+      width: 100%;
+      max-width: 70%;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      gap: 4em;
+      margin-top: 2em;
+      border-radius: 3em;
+    }
+
+    .btn-no-content {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      background-color: #000;
+      width: 10em;
+      padding: 0.5em;
+      text-align: center;
+      border-radius: 2em;
+    }
