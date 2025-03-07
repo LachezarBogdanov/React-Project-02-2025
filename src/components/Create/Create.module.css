@@ -54,6 +54,16 @@ form h2{
     outline: none;
 }
 
+.field textarea::placeholder {
+    color: #fff;
+}
+
+.description-p {
+    color: #fff;
+    justify-self: start;
+    padding-bottom: 0;
+}
+
 .field label {
     color: #fff;
 }
@@ -97,3 +107,43 @@ form p > a {
 form p > a:hover {
     color: #333;
 }
+
+.option-menu {
+    margin-bottom: 2em;
+    margin-top: -1em;
+}
+
+.option-menu p {
+    background-color: transparent;
+    color: #fff;
+    padding-bottom: 0.3em;
+    justify-self: start;
+    margin-left: 0.3em;
+}
+
+.select {
+    width: 100%;
+  border: none;
+  border: 1px solid #fff; /* Underline */
+  background: transparent;
+  font-size: 16px;
+  padding: 5px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 2em;
+  font-weight: 600;
+}
+
+.select option {
+    background: white;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.select option:hover {
+    background: lightgray;
+  }
+
