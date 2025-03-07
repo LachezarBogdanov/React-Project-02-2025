@@ -1,0 +1,59 @@
+.product {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 5em;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 6.5em;
+}
+
+.product img{
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
+    filter: blur(0);
+    transition: 0.3s ease-in;
+}
+
+.product:hover img {
+    filter: blur(2px);
+  }
+
+.product:hover .centerIcon {
+    opacity: 3;
+  }
+
+.product .centerIcon {
+    position: absolute;
+    background-color: red;
+    top: calc(50% - 1em);
+    left: calc(50% - 1.3em);
+    padding: 0.5em 0.8em;
+    border-radius: 50%;
+    color: #fff;
+    background-color: black;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+.product h2{
+    color: black;
+    font-size: 1.2em;
+    margin-left: 0.5em;
+}
+
+.product p:nth-of-type(1){
+    color: #666;
+    padding-bottom: 0.5em;
+}
+
+.product p{
+    color: #333;
+    font-weight: 600;
+    margin-left: 0.5em;
+}
+
+p.type {
+    font-size: 0.8em;
+}

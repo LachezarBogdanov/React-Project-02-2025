@@ -1,105 +1,58 @@
+import { useEffect, useState } from 'react'
 import styles from './Shop.module.css'
+import ProductItem from '../ProductItem/ProductItem';
 
 export default function Shop() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const allProducts = fetch('http://localhost:3030/jsonstore/supplements')
+                            .then(res => res.json())
+                            .then(result => {
+                                setProducts(Object.values(result));
+                            })
+    })
+
     return (
         <>
         <section className={styles.title}>
-        <h1>Nutritional supplements</h1>
-        <p>Free delivery on orders over 100 BGN with your favorite courier</p>
-        </section>
-        <main className={styles.shopMain}>
-        <div className={styles.select}>
-        <p>Showing all N products</p>
-        <select name="first-newest" id="first-newest">
-        <option value="newest">Newest</option>
-        <option value="newest">Cheapest</option>
-        <option value="newest">Most expensive</option>
-        </select>
-        </div>
-        <section className={styles.allProducts}>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        <a href="#" className={styles.product}>
-        <img
-        src="/FORCELAB_TESTOSTERONE_BOMB_540G_MANGO_WATERMELON_3D.jpg"
-        alt="#"
-        />
-        <div className={styles.centerIcon}>+</div>
-        <h2>Name</h2>
-        <p className={styles.type}>30 sasheta</p>
-        <p>42lv</p>
-        </a>
-        </section>
-        <section className={styles.desrpition}>
-        {/* <h4>
+  <h1>Nutritional supplements</h1>
+  <p>Free delivery on orders over 100 BGN with your favorite courier</p>
+</section>
+
+<main className={styles.shopMain}>
+  <div className={styles.select}>
+    <p>Showing all N products</p>
+    <select name="first-newest" id="first-newest">
+      <option value="newest">Newest</option>
+      <option value="cheapest">Cheapest</option>
+      <option value="most-expensive">Most expensive</option>
+    </select>
+  </div>
+
+  <section className={styles.allProducts}>
+    {products.map(product => (
+        <ProductItem 
+            key={product._id}
+            _id={product._id}
+            name={product.name}
+            image={product.image}
+            price={product.price}
+            type={product.type} />
+    ))}
+    
+  </section>
+
+  <section className={styles.description}>
+  </section>
+</main>
+
+        </>
+        
+    )
+}
+
+{/* <h4>
         Nutritional supplements for every sports enthusiast
         </h4>
         <p>
@@ -143,9 +96,3 @@ export default function Shop() {
         products, proteins, amino acids and other products that contribute to the
         rapid accumulation of muscle mass and the improvement of sports results.
         </p> */}
-        </section>
-        </main>
-        </>
-        
-    )
-}
