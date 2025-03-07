@@ -83,7 +83,7 @@ article.flavour select option{
 .size p:nth-child(2) {
     padding-left: 1em;
     background-color: #e5e4e4;
-    width: 70px;
+    width: 100px;
     padding: 0.5em;
     text-align: center;
     border-radius: 5em;

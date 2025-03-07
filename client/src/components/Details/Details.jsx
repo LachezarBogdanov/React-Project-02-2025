@@ -1,37 +1,52 @@
-import { Link } from 'react-router'
+import { Link, useParams } from 'react-router'
 import styles from './Details.module.css'
+import { useEffect, useState } from 'react';
 
 export default function Details() {
+  const { productId } = useParams();
+  const [product, setProduct] = useState({});
+  const [flavours, setFlavours] = useState([]);
+  
+  
+  useEffect(() => {
+    fetch(`http://localhost:3030/jsonstore/supplements/${productId}`)
+    .then(res => res.json())
+    .then(result => {
+      setFlavours(result.flavours.split(', '));
+      setProduct(result);
+    })
+  }, [productId])
+  
     return (
         <section className={styles.product}>
   <div className={styles.productImg}>
-    <img src="/FORCELAB_HYDRO_BURN_120CAPS_3D.png" alt="Product Image" />
+    <img src={product.image} alt={product.name} />
   </div>
 
   <div className={styles.productDetails}>
     <div className={styles.title}>
-      <h1>Product Name</h1>
+      <h1>{product.name}</h1>
       <div className={styles.editDelete}>
         <Link to="/edit" className={styles.edit}>Edit</Link>
         <a href="#" className={styles.delete}>Delete</a>
       </div>
     </div>
 
-    <h2>Product Flavour</h2>
+    <h2>{product.flavours}</h2>
     <p className={styles.price}>90lv</p>
 
     <article className={styles.flavour}>
       <p>Flavour</p>
       <select name="flavour" id="flavour">
-        <option value="flavour">Flavour</option>
-        <option value="flavour">Flavour</option>
-        <option value="flavour">Flavour</option>
+        {flavours.map(flavour => (
+          <option key={flavour} value={flavour}>{flavour}</option>
+        ))}
       </select>
     </article>
 
     <article className={styles.size}>
       <p>Size</p>
-      <p>360g</p>
+      <p>{product.size}</p>
     </article>
 
     <article className={styles.quantity}>
@@ -46,7 +61,7 @@ export default function Details() {
       <label htmlFor="item1" className={styles.accordionHeader}>Описание</label>
       <div className={styles.accordionContent}>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ea.
+          {product.description}
         </p>
       </div>
     </div>
