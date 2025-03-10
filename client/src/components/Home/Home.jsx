@@ -20,7 +20,7 @@ export default function Home () {
                 WheyPro is the company that supports you in your pursuit of a healthy
                 diet and an active lifestyle
             </p>
-            <Link to="/shop">ALL PRODUCTS</Link>
+            <Link to="/shop" className={styles.allBtn}>ALL PRODUCTS</Link>
             </article>
             <article className={styles.photos}>
             <div className={styles.photo}>

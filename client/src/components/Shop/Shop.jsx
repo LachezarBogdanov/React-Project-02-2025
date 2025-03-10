@@ -6,7 +6,7 @@ export default function Shop() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const allProducts = fetch('http://localhost:3030/jsonstore/supplements')
+       fetch('http://localhost:3030/jsonstore/supplements')
                             .then(res => res.json())
                             .then(result => {
                                 setProducts(Object.values(result));

@@ -87,6 +87,41 @@ article.welcomeMsg {
     padding-bottom: 3em;
 }
 
+.welcomeMsg .allBtn {
+    background-color: black;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .welcomeMsg .allBtn:hover {
+    background-color: #222;
+    border-color: #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .welcomeMsg .allBtn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+    transition: all 0.3s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  
+  .welcomeMsg .allBtn:hover::before {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
 article.welcomeMsg h1{
     font-size: 3em;
     line-height: 1.1;
@@ -274,6 +309,7 @@ section.newProducts h1 {
 .newProduct p:nth-of-type(2) {
     color: #fff;
 }
+
 
 /* section comments  */
 
