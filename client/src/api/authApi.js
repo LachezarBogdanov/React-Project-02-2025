@@ -14,3 +14,22 @@ export const useLogin = () => {
         login,
     }
 }
+
+export const useRegister = () => {
+    const register = async (email, password, rePassword) => {
+
+        if(password !== rePassword) {
+            console.log('Password missmatch!');
+            
+            return;
+        }
+
+        const result = await request.post(`${baseUrl}/register`, {email, password});
+
+        return result;
+    }
+
+    return {
+        register,
+    }
+}

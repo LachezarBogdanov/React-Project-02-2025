@@ -90,7 +90,7 @@ form h2{
     color: transparent;
 }
 
-form a.registerBtn {
+form button.registerBtn {
     text-decoration: none;
     color: #000;
     background-color: #fff;
@@ -99,6 +99,8 @@ form a.registerBtn {
     translate: 13% 0;
     padding: 1em;
     border-radius: 3em;
+    border: none;
+    cursor: pointer;
 }
 
 form p {
