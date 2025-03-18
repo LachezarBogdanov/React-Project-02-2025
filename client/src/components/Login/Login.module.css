@@ -89,7 +89,7 @@ form h2{
     color: transparent;
 }
 
-form a.loginBtn {
+form button.loginBtn {
     text-decoration: none;
     color: #000;
     background-color: #fff;
@@ -98,6 +98,8 @@ form a.loginBtn {
     translate: 13% 0;
     padding: 1em;
     border-radius: 3em;
+    border: none;
+    cursor: pointer;
 }
 
 form p {
