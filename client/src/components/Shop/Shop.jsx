@@ -1,17 +1,9 @@
-import { useEffect, useState } from 'react'
 import styles from './Shop.module.css'
 import ProductItem from '../ProductItem/ProductItem';
+import { useProducts } from '../../api/productApi';
 
 export default function Shop() {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-       fetch('http://localhost:3030/jsonstore/supplements')
-                            .then(res => res.json())
-                            .then(result => {
-                                setProducts(Object.values(result));
-                            })
-    })
+    const { products } = useProducts();
 
     return (
         <>
@@ -22,7 +14,7 @@ export default function Shop() {
 
 <main className={styles.shopMain}>
   <div className={styles.select}>
-    <p>Showing all N products</p>
+    <p>Showing all {products.length} products</p>
     <select name="first-newest" id="first-newest">
       <option value="newest">Newest</option>
       <option value="cheapest">Cheapest</option>
@@ -36,7 +28,7 @@ export default function Shop() {
             key={product._id}
             _id={product._id}
             name={product.name}
-            image={product.image}
+            imageUrl={product.img}
             price={product.price}
             type={product.type} />
     ))}

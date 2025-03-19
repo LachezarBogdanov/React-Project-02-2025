@@ -1,26 +1,23 @@
 import { Link, useParams } from 'react-router'
 import styles from './Details.module.css'
 import { useEffect, useState } from 'react';
+import { useProduct } from '../../api/productApi';
 
 export default function Details() {
   const { productId } = useParams();
-  const [product, setProduct] = useState({});
   const [flavours, setFlavours] = useState([]);
-  
+  const { product } = useProduct(productId);
   
   useEffect(() => {
-    fetch(`http://localhost:3030/jsonstore/supplements/${productId}`)
-    .then(res => res.json())
-    .then(result => {
-      setFlavours(result.flavours.split(', '));
-      setProduct(result);
-    })
-  }, [productId])
+    if(product?.flavour) {
+      setFlavours(product.flavour.split(', '))
+    }
+  }, [product])
   
     return (
         <section className={styles.product}>
   <div className={styles.productImg}>
-    <img src={product.image} alt={product.name} />
+    <img src={product.img} alt={product.name} />
   </div>
 
   <div className={styles.productDetails}>
@@ -32,10 +29,11 @@ export default function Details() {
       </div>
     </div>
 
-    <h2>{product.flavours}</h2>
-    <p className={styles.price}>90lv</p>
+    <h2>{product.flavour}</h2>
+    <p className={styles.price}>{product.price}lv</p>
 
-    <article className={styles.flavour}>
+      {product.flavour && (
+        <article className={styles.flavour}>
       <p>Flavour</p>
       <select name="flavour" id="flavour">
         {flavours.map(flavour => (
@@ -43,6 +41,7 @@ export default function Details() {
         ))}
       </select>
     </article>
+      )}
 
     <article className={styles.size}>
       <p>Size</p>

@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import styles from './Create.module.css'
+import { useCreateProduct } from '../../api/productApi';
+import { useNavigate } from 'react-router';
 
 export default function Create() {
     const [selectedType, setSelectedType] = useState("");
     const [sizeOptions, setSizeOptions] = useState([]);
+    const { create } = useCreateProduct();
+    const navigate = useNavigate();
 
     // Define size options for each type
     const sizeMap = {
@@ -16,14 +20,22 @@ export default function Create() {
     const handleTypeChange = (event) => {
       const type = event.target.value;
       setSelectedType(type);
-      console.log(type);
       
       setSizeOptions(sizeMap[type] || []);
     };
+
+    const createHandler = async (formData) => {
+
+      const productData = Object.fromEntries(formData);
+
+      await create(productData);
+
+      navigate('/shop');
+    }
   
     return (
       <main className={styles["main-create"]}>
-        <form action="#">
+        <form action={createHandler}>
           <h2>Add Product</h2>
   
         <div className={styles["option-menu"]}>
@@ -75,7 +87,7 @@ export default function Create() {
             <textarea name="description" id="description"></textarea>
           </div>
   
-          <a className={styles.createBtn} href="#">Create</a>
+          <button className={styles.createBtn} type='submit'>Create</button>
         </form>
       </main>
     );

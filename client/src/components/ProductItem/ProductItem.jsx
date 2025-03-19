@@ -3,7 +3,7 @@ import styles from './ProductItem.module.css'
 
 export default function ProductItem({
     _id,
-    image,
+    imageUrl,
     name,
     type,
     price
@@ -11,8 +11,8 @@ export default function ProductItem({
     return (
         <Link to={`/details/${_id}`} className={styles.product}>
               <img
-                src={image}
-                alt="#"
+                src={imageUrl}
+                alt={name}
               />
               <div className={styles.centerIcon}>+</div>
               <h2>{name}</h2>

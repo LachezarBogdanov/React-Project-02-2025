@@ -1649,7 +1649,32 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        products: {
+            "486755d6-60bf-471e-a8f0-b837b060fbbc": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                type: "protein",
+                "size": "500g",
+                "name": "Whey",
+                "img": "https://th.bing.com/th/id/R.f90eb6d9c1335e9625b85fe393b17f6f?rik=9RFBJDdbHmvS4A&pid=ImgRaw&r=0",
+                "price": "100",
+                "flavour": "Chocolate",
+                "description": "asdasdasdasdasdasd",
+                "_createdOn": 1742419654816,
+                "_id": "486755d6-60bf-471e-a8f0-b837b060fbbc"
+            },
+            "c37690dd-69cc-4a10-ba2f-03554bd8ba12": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "type": "weight-control",
+                "size": "30 caps",
+                "name": "Fat Burner",
+                "img": "https://th.bing.com/th/id/R.92688c5012eb6e2f26db2bf2faaa6a3e?rik=QJSi2A3BZzBrXw&pid=ImgRaw&r=0",
+                "price": "120",
+                "description": "This is a fat burner to burn your weight for small time!",
+                "_createdOn": 1742421020028,
+                "_id": "c37690dd-69cc-4a10-ba2f-03554bd8ba12"
+            }
+        }
     };
     var rules$1 = {
     	users: {
