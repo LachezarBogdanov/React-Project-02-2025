@@ -11,7 +11,7 @@ import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
 import Create from './components/Create/Create';
 import UserProvider from './providers/UserProvider';
-
+import Logout from './components/Logout/Logout';
 
 function App() {
 
@@ -22,12 +22,13 @@ function App() {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/shop' element={<Shop />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path='/create' element={<Create />} />
             <Route path='/details/:productId' element={<Details />} />
             <Route path='/edit/:productId' element={<Edit />} />
-            <Route path='/create' element={<Create />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/logout' element={<Logout />} />
         </Routes>
         <Footer />
       </UserProvider>
