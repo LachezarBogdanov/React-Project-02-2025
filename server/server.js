@@ -1686,6 +1686,30 @@
                 "_createdOn": 1742478109505,
                 "_id": "68304574-9cfe-4a34-b5c8-4fe098a82c7b"
             },
+            "0c1b788c-2c1b-400f-94eb-480368676145": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "type": "pre-workout",
+                "size": "60 servings",
+                "name": "C4",
+                "img": "https://th.bing.com/th/id/OIP.4SPlh-vSh94zMqqoLkk-hwHaHg?rs=1&pid=ImgDetMain",
+                "price": "80",
+                "flavour": "Watermelon",
+                "description": "C4 Pre Workout is a pre-workout supplement that provides energy, muscular endurance, pump, and performance. It contains 300 mg of caffeine, CarnoSyn Beta-Alanine, Citrulline, and Dual Creatines. It is clean, with no artificial dyes or flavors.",
+                "_createdOn": 1742489244853,
+                "_id": "0c1b788c-2c1b-400f-94eb-480368676145"
+            }, 
+            "a7f2d09e-d7e0-471c-9ae3-7941cd09825a": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "type": "protein",
+                "size": "2kg",
+                "name": "Just Whey",
+                "img": "https://gymbeam.bg/media/catalog/product/cache/bf5a31e851f50f3ed6850cbbf183db11/j/u/just_whey_blueberry_yoghurt_1000_g_gymbeam_1.png",
+                "price": "60",
+                "flavour": "Vanilla",
+                "description": "Just Whey is a multi-component whey protein derived from the milk of free-range (Grass-Fed Protein) cows. It contains a functional combination of whey concentrate, isolate and hydrolysate. It has a high proportion of proteins that contribute to the growth and maintenance of muscle mass and normal bones.",
+                "_createdOn": 1742489376299,
+                "_id": "a7f2d09e-d7e0-471c-9ae3-7941cd09825a"
+            },
         }
     };
     var rules$1 = {
