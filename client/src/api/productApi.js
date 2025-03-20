@@ -38,3 +38,27 @@ export const useCreateProduct = () => {
         create,
     }
 }
+
+export const useEditProduct = () => {
+    const { request } = useAuth();
+
+    const edit = (productId, productData) => {
+        request.put(`${baseUrl}/${productId}`, { ...productData, _id: productId });
+    };
+
+    return {
+        edit,
+    }
+}
+
+export const useDeleteProduct = () => {
+    const { request } = useAuth();
+
+    const deleteGame = (productId) => {
+        request.delete(`${baseUrl}/${productId}`)
+    };
+
+    return {
+        deleteGame,
+    }
+}

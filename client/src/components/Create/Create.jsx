@@ -9,7 +9,6 @@ export default function Create() {
     const { create } = useCreateProduct();
     const navigate = useNavigate();
 
-    // Define size options for each type
     const sizeMap = {
       protein: ["500g", "1kg", "2kg"],
       "pre-workout": ["30 servings", "60 servings"],

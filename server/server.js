@@ -1673,7 +1673,19 @@
                 "description": "This is a fat burner to burn your weight for small time!",
                 "_createdOn": 1742421020028,
                 "_id": "c37690dd-69cc-4a10-ba2f-03554bd8ba12"
-            }
+            },
+            "68304574-9cfe-4a34-b5c8-4fe098a82c7b": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "type": "muscle-mass",
+                "size": "3kg",
+                "name": "Mutant",
+                "img": "https://m.media-amazon.com/images/I/71ecpMmTxUL._AC_SL1500_.jpg",
+                "price": "130",
+                "flavour": "Biscuit",
+                "description": "Designed specifically for the strongest bodybuilders and weightlifters that walk the earth, MUTANT MASS is a clean gainer used by athletes seeking the most powerful gainer commercially available. ",
+                "_createdOn": 1742478109505,
+                "_id": "68304574-9cfe-4a34-b5c8-4fe098a82c7b"
+            },
         }
     };
     var rules$1 = {

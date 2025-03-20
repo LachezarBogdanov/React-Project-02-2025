@@ -1,12 +1,14 @@
-import { Link, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router'
 import styles from './Details.module.css'
 import { useEffect, useState } from 'react';
-import { useProduct } from '../../api/productApi';
+import { useDeleteProduct, useProduct } from '../../api/productApi';
 
 export default function Details() {
   const { productId } = useParams();
   const [flavours, setFlavours] = useState([]);
   const { product } = useProduct(productId);
+  const { deleteGame } = useDeleteProduct();
+  const navigate = useNavigate();
   
   useEffect(() => {
     if(product?.flavour) {
@@ -14,6 +16,18 @@ export default function Details() {
     }
   }, [product])
   
+  const productDeleteHandler = async () => {
+    const choice = confirm('Are you sure you want to delete this product?');
+
+    if(!choice) {
+      return;
+    }
+
+    await deleteGame(productId);
+
+    navigate('/shop');
+  }
+
     return (
         <section className={styles.product}>
   <div className={styles.productImg}>
@@ -24,8 +38,8 @@ export default function Details() {
     <div className={styles.title}>
       <h1>{product.name}</h1>
       <div className={styles.editDelete}>
-        <Link to="/edit" className={styles.edit}>Edit</Link>
-        <a href="#" className={styles.delete}>Delete</a>
+        <Link to={`/edit/${productId}`} className={styles.edit}>Edit</Link>
+        <button onClick={productDeleteHandler} className={styles.delete}>Delete</button>
       </div>
     </div>
 
@@ -57,7 +71,7 @@ export default function Details() {
 
     <div className={styles.accordion}>
       <input type="checkbox" id="item1" hidden />
-      <label htmlFor="item1" className={styles.accordionHeader}>Описание</label>
+      <label htmlFor="item1" className={styles.accordionHeader}>Description</label>
       <div className={styles.accordionContent}>
         <p>
           {product.description}

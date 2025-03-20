@@ -139,6 +139,8 @@ section.product a.addToCart {
     padding: 0.5em 1em;
     color: #fff;
     border-radius: 1em;
+    border: none;
+    cursor: pointer;
 }
 
 .accordion {
