@@ -22,6 +22,7 @@ export default function useAuth() {
         accessToken,
         _id,
         email,
+        isAuthenticated: !!accessToken,
         request: {
             get: requestWrapper.bind(null, 'GET'),
             post: requestWrapper.bind(null, 'POST'),
