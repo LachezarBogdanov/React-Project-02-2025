@@ -1,7 +1,4 @@
 import { Route, Routes } from 'react-router';
-import { useState } from 'react';
-
-import { UserContext } from './contexts/UserContext';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -13,18 +10,14 @@ import Cart from './components/Cart/Cart';
 import Details from './components/Details/Details';
 import Edit from './components/Edit/Edit';
 import Create from './components/Create/Create';
+import UserProvider from './providers/UserProvider';
 
 
 function App() {
-  const [authData, setAuthData] = useState({});
-
-  const userLoginHandler = (resultData) => {
-    setAuthData(resultData);
-  }
 
   return (
     <>
-      <UserContext.Provider value={{...authData, userLoginHandler}}>
+      <UserProvider>
         <Header />
         <Routes>
             <Route path='/' element={<Home />} />
@@ -37,7 +30,7 @@ function App() {
             <Route path='/create' element={<Create />} />
         </Routes>
         <Footer />
-      </UserContext.Provider>
+      </UserProvider>
     </>
   )
 }
