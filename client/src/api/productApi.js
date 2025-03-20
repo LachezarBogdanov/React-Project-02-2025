@@ -7,13 +7,17 @@ const baseUrl = 'http://localhost:3030/data/products';
 
 export const useProducts = () => {
     const [products, setProducts] = useState([]);
+    const [isPending, setIsPending] = useState(true);
 
     useEffect(() => {
         request.get(baseUrl)
-            .then(setProducts)
+            .then((data) => {
+                setProducts(data);
+                setIsPending(false);
+            })
     }, []);
 
-    return { products };
+    return { products, isPending };
 }
 
 export const useProduct = (productId) => {
@@ -25,6 +29,26 @@ export const useProduct = (productId) => {
     }, [productId])
 
     return { product };
+}
+
+export const useLatestProducts = () => {
+    const [latestProducts, setLatestProducts] = useState([]);
+    const [pending, setPending] = useState(true);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams({
+            sortBy: '_createdOn desc',
+            pageSize: 4,
+        });
+
+        request.get(`${baseUrl}?${searchParams.toString()}`)
+            .then((data) => {
+                setLatestProducts(data);
+                setPending(false);
+            });
+    }, []);
+
+    return {latestProducts, pending}
 }
 
 export const useCreateProduct = () => {

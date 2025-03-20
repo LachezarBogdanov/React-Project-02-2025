@@ -1,7 +1,12 @@
 import { Link } from 'react-router'
 import styles from './Home.module.css'
+import HomeProductItem from './HomeProductItem/HomeProductItem'
+import { useLatestProducts } from '../../api/productApi'
+import Spinner from '../Spinner/Spinner';
 
 export default function Home () {
+    const { latestProducts, pending } = useLatestProducts();
+
     return (
         <>
         <section className={styles.banner}>
@@ -64,34 +69,15 @@ export default function Home () {
         <section className={styles.newProducts}>
         <h1>NEW PRODUCTS</h1>
         <div className={styles.newProductsWrapper}>
-            <Link to="/details" className={styles.newProduct}>
-            <img src="/pre-workout.jpg" alt="pre" />
-            <div className={styles.centerIcon}>+</div>
-            <h3>Name of the product</h3>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-            </Link>
-            <Link to="/details" className={styles.newProduct}>
-            <img src="/pre-workout.jpg" alt="pre" />
-            <div className={styles.centerIcon}>+</div>
-            <h3>Name of the product</h3>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-            </Link>
-            <Link to="/details" className={styles.newProduct}>
-            <img src="/pre-workout.jpg" alt="pre" />
-            <div className={styles.centerIcon}>+</div>
-            <h3>Name of the product</h3>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-            </Link>
-            <Link to="/details" className={styles.newProduct}>
-            <img src="/pre-workout.jpg" alt="pre" />
-            <div className={styles.centerIcon}>+</div>
-            <h3>Name of the product</h3>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-            </Link>
+            
+            {pending 
+                ? <Spinner />
+                : (
+                    latestProducts.map(product => {
+                        return <HomeProductItem key={product._id} product={product} />
+                    })
+                )}
+            
         </div>
         </section>
         <section className={styles.comments}>

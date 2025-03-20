@@ -1,9 +1,10 @@
 import styles from './Shop.module.css'
 import ProductItem from '../ProductItem/ProductItem';
 import { useProducts } from '../../api/productApi';
+import Spinner from '../Spinner/Spinner';
 
 export default function Shop() {
-    const { products } = useProducts();
+    const { products, isPending } = useProducts();
 
     return (
         <>
@@ -23,7 +24,9 @@ export default function Shop() {
   </div>
 
   <section className={styles.allProducts}>
-    {products.map(product => (
+    {isPending 
+      ? <Spinner />
+      : (products.map(product => (
         <ProductItem 
             key={product._id}
             _id={product._id}
@@ -31,7 +34,8 @@ export default function Shop() {
             imageUrl={product.img}
             price={product.price}
             type={product.type} />
-    ))}
+    )))}
+    
     
   </section>
 
