@@ -1,7 +1,13 @@
 // import { Link } from 'react-router'
+import { useLatestProducts } from '../../api/productApi'
+import Spinner from '../Spinner/Spinner';
 import styles from './Cart.module.css'
+import CartProduct from './CartProduct/CartProduct';
 
 export default function Cart() {
+    
+    const { latestProducts, pending } = useLatestProducts();
+    
     return (
             <main  className={styles['cart-main']}>
     <h1>Your Cart</h1>
@@ -53,49 +59,17 @@ export default function Cart() {
     <section className={styles.details}>
         <h1>More for you:</h1>
         <article className={styles.products}>
-        <a href="#" className={styles.product}>
-            <img 
-            src="/FORCELAB_TRIBULUS_TERRESTRIS_60TABS_3D.jpg" 
-            alt="#" 
-            />
-            <div className={styles.centerIcon}>+</div>
-            <p>Tribulus terestris</p>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-        </a>
 
-        <a href="#" className={styles.product}>
-            <img 
-            src="/FORCELAB_TRIBULUS_TERRESTRIS_60TABS_3D.jpg" 
-            alt="#" 
-            />
-            <div className={styles.centerIcon}>+</div>
-            <p>Tribulus terestris</p>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-        </a>
-
-        <a href="#" className={styles.product}>
-            <img 
-            src="/FORCELAB_TRIBULUS_TERRESTRIS_60TABS_3D.jpg" 
-            alt="#" 
-            />
-            <div className={styles.centerIcon}>+</div>
-            <p>Tribulus terestris</p>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-        </a>
-
-        <a href="#" className={styles.product}>
-            <img 
-            src="/FORCELAB_TRIBULUS_TERRESTRIS_60TABS_3D.jpg" 
-            alt="#" 
-            />
-            <div className={styles.centerIcon}>+</div>
-            <p>Tribulus terestris</p>
-            <p className={styles.type}>30 sasheta</p>
-            <p>50lv</p>
-        </a>
+            {pending 
+                ? <Spinner />
+                : (
+                    latestProducts.length > 0 
+                        ?   latestProducts.map(product => (
+                            <CartProduct key={product._id} product={product} />
+                        ))
+                        : null
+                )}
+            
         </article>
     </section>
     </main>
