@@ -101,7 +101,7 @@ article.quantity p{
     color: #555;
 }
 
-section.product a.addToCart {
+section.product button.addToCart {
     text-decoration: none;
     display: block;
     background-color: red;
@@ -111,6 +111,8 @@ section.product a.addToCart {
     border-radius: 2em;
     font-weight: bold;
     margin-bottom: 2em;
+    border: none;
+    width: 100%;
 }
 
 .productDetails .title {

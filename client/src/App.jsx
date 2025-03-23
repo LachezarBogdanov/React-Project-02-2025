@@ -12,12 +12,14 @@ import Edit from './components/Edit/Edit';
 import Create from './components/Create/Create';
 import UserProvider from './providers/UserProvider';
 import Logout from './components/Logout/Logout';
+import CartProvider from './providers/CartProvider';
 
 function App() {
 
   return (
     <>
       <UserProvider>
+        <CartProvider>
         <Header />
         <Routes>
             <Route path='/' element={<Home />} />
@@ -31,6 +33,7 @@ function App() {
             <Route path='/logout' element={<Logout />} />
         </Routes>
         <Footer />
+        </CartProvider>
       </UserProvider>
     </>
   )

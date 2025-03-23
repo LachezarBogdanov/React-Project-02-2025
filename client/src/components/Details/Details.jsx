@@ -1,14 +1,17 @@
 import { Link, useNavigate, useParams } from 'react-router'
 import styles from './Details.module.css'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useDeleteProduct, useProduct } from '../../api/productApi';
+import { CartContext } from '../../contexts/CartContext';
 
 export default function Details() {
   const { productId } = useParams();
-  const [flavours, setFlavours] = useState([]);
-  const { product } = useProduct(productId);
   const { deleteGame } = useDeleteProduct();
+  const [flavours, setFlavours] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const { product } = useProduct(productId);
   const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
   
   useEffect(() => {
     if(product?.flavour) {
@@ -27,6 +30,16 @@ export default function Details() {
 
     navigate('/shop');
   }
+
+  const handleQuantityChange = (e) => {
+    setQuantity(Number(e.target.value));
+};  
+
+const handleAddToCart = () => {
+  addToCart(product, quantity);
+
+  navigate('/cart');
+};
 
     return (
         <section className={styles.product}>
@@ -64,10 +77,15 @@ export default function Details() {
 
     <article className={styles.quantity}>
       <p>Quantity</p>
-      <input type="number" min={1} defaultValue={1} />
+      <input
+      type="number"
+      min={1}
+      defaultValue={1} 
+      onChange={handleQuantityChange}
+      />
     </article>
 
-    <a href="#" className={styles.addToCart}>Add to Cart</a>
+    <button onClick={handleAddToCart} className={styles.addToCart}>Add to Cart</button>
 
     <div className={styles.accordion}>
       <input type="checkbox" id="item1" hidden />
