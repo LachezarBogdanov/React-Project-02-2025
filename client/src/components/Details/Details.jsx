@@ -49,6 +49,8 @@ const handleAddToCart = () => {
 
 const handleFavourite = () => {
   savePost(productId);
+
+  navigate('/favourite');
 }
 
     return (
