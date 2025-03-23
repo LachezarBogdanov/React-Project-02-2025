@@ -1,6 +1,6 @@
 .product {
-    width: 250px;
-    height: 250px;
+    max-width: 250px;
+    max-height: 250px;
     margin-bottom: 5em;
     text-decoration: none;
     position: relative;
@@ -8,8 +8,8 @@
 }
 
 .product img{
-    width: 100%;
-    height: auto;
+    width: 250px;
+    height: 230px;
     box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
     filter: blur(0);
     transition: 0.3s ease-in;

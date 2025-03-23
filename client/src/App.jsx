@@ -13,9 +13,10 @@ import Create from './components/Create/Create';
 import UserProvider from './providers/UserProvider';
 import Logout from './components/Logout/Logout';
 import CartProvider from './providers/CartProvider';
+import Favourite from './components/Favourite/Favourite';
 
 function App() {
-
+  
   return (
     <>
       <UserProvider>
@@ -24,6 +25,7 @@ function App() {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/shop' element={<Shop />} />
+            <Route path='/shop/:typeOfProducts' element={<Shop />} />
             <Route path='/create' element={<Create />} />
             <Route path='/details/:productId' element={<Details />} />
             <Route path='/edit/:productId' element={<Edit />} />
@@ -31,6 +33,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/logout' element={<Logout />} />
+            <Route path='/favourite' element={<Favourite />} />
         </Routes>
         <Footer />
         </CartProvider>

@@ -52,18 +52,18 @@ export default function Home () {
         <section className={styles.categories}>
         <h1>CATEGORIES</h1>
         <div className={styles.categoriesWrapper}>
-            <a href="#" className={`${styles.cardMuscle} ${styles.card}`}>
+            <Link to={'/shop/muscle-mass'} className={`${styles.cardMuscle} ${styles.card}`}>
             <span>Muscle mass</span>
-            </a>
-            <a href="#" className={`${styles.cardWorkout} ${styles.card}`}>
+            </Link>
+            <Link to={'/shop/pre-workout'} className={`${styles.cardWorkout} ${styles.card}`}>
             <span>Before workout</span>
-            </a>
-            <a href="#" className={`${styles.cardWeight} ${styles.card}`}>
+            </Link>
+            <Link to={'/shop/weight-control'} className={`${styles.cardWeight} ${styles.card}`}>
             <span>Weight Control</span>
-            </a>
-            <a href="#" className={`${styles.cardProtein} ${styles.card}`}>
+            </Link>
+            <Link to={'/shop/protein'} className={`${styles.cardProtein} ${styles.card}`}>
             <span>Protein</span>
-            </a>
+            </Link>
         </div>
         </section>
         <section className={styles.newProducts}>

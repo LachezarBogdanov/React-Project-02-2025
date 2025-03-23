@@ -69,6 +69,12 @@ export default function Header (){
                 <i className="fa-solid fa-cart-shopping" />
               </NavLink>
             </li>
+
+            <li>
+                <NavLink to="/favourite" className={({isActive}) => isActive ? styles.active : {}}>
+                <i className='fa-solid fa-heart' />
+                </NavLink>
+            </li>
           </ul>
         </nav>
       </header>     

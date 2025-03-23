@@ -1,0 +1,79 @@
+.favouriteMain {
+    background-image: url(../../Fitness-olymp-mladost-4-main.jpg);
+    padding: 5em;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wishlist-container {
+    max-width: 900px;
+    margin: 5em auto;
+    background: rgb(20, 20, 20);
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Header */
+.wishlist-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+/* Search & Sort */
+.search-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    background-color: #000;
+}
+
+.search-sort input {
+    width: 90%;
+    padding: 8px;
+    background-color: #000;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.buttons button {
+    background-color: #aaa;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+
+
+/* Tags */
+.tags {
+    margin-top: 8px;
+}
+
+.tags span {
+    background-color: #ccc;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+

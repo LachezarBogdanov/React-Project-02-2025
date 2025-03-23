@@ -86,3 +86,26 @@ export const useDeleteProduct = () => {
         deleteGame,
     }
 }
+
+export const useSortedProducts = (typeOfProducts) => {
+    const [products, setProducts] = useState([]);
+    const [pending, setPending] = useState(true);
+    
+    useEffect(() => {
+        const searchParams = new URLSearchParams({
+            where: `type="${typeOfProducts}"`
+        });
+
+        request.get(`${baseUrl}?${searchParams.toString()}`)
+        .then(products => {
+            setProducts(products);
+            setPending(false);
+        });
+    }, [typeOfProducts]);
+
+
+    return {
+        products,
+        pending
+    }
+}

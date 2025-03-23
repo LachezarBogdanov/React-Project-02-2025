@@ -3,6 +3,8 @@ import styles from './Details.module.css'
 import { useContext, useEffect, useState } from 'react';
 import { useDeleteProduct, useProduct } from '../../api/productApi';
 import { CartContext } from '../../contexts/CartContext';
+import { useSave } from '../../api/likedApi';
+import useAuth from '../../hooks/useAuth';
 
 export default function Details() {
   const { productId } = useParams();
@@ -12,13 +14,17 @@ export default function Details() {
   const { product } = useProduct(productId);
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
+  const { savePost } = useSave();
+  const { _id } = useAuth();
   
   useEffect(() => {
     if(product?.flavour) {
       setFlavours(product.flavour.split(', '))
     }
   }, [product])
-  
+
+  const isOwner = product._ownerId === _id;
+
   const productDeleteHandler = async () => {
     const choice = confirm('Are you sure you want to delete this product?');
 
@@ -41,19 +47,28 @@ const handleAddToCart = () => {
   navigate('/cart');
 };
 
+const handleFavourite = () => {
+  savePost(productId);
+}
+
     return (
         <section className={styles.product}>
   <div className={styles.productImg}>
-    <img src={product.img} alt={product.name} />
+    <img src={product.img} alt={product.name} className={styles.detailsImg} />
   </div>
 
   <div className={styles.productDetails}>
+        <button onClick={handleFavourite} className={styles.favourite}><i className='fa-solid fa-heart'/></button>
     <div className={styles.title}>
       <h1>{product.name}</h1>
-      <div className={styles.editDelete}>
-        <Link to={`/edit/${productId}`} className={styles.edit}>Edit</Link>
-        <button onClick={productDeleteHandler} className={styles.delete}>Delete</button>
-      </div>
+
+        {isOwner
+          ? (
+            <div className={styles.editDelete}>
+              <Link to={`/edit/${productId}`} className={styles.edit}>Edit</Link>
+              <button onClick={productDeleteHandler} className={styles.delete}>Delete</button>
+            </div>
+        ) : ''}
     </div>
 
     <h2>{product.flavour}</h2>
