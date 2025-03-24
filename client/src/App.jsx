@@ -15,6 +15,8 @@ import Logout from './components/Logout/Logout';
 import CartProvider from './providers/CartProvider';
 import Favourite from './components/Favourite/Favourite';
 import FavouriteProvider from './providers/favouriteProvider';
+import AuthGuard from './components/Guards/AuthGuard';
+import GuestGuard from './components/Guards/GuestGuard';
 
 function App() {
   
@@ -28,14 +30,18 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/shop/:typeOfProducts' element={<Shop />} />
-            <Route path='/create' element={<Create />} />
             <Route path='/details/:productId' element={<Details />} />
-            <Route path='/edit/:productId' element={<Edit />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/logout' element={<Logout />} />
-            <Route path='/favourites' element={<Favourite />} />
+            <Route element={<AuthGuard />}>
+                <Route path='/create' element={<Create />} />
+                <Route path='/edit/:productId' element={<Edit />} />
+                <Route path='/logout' element={<Logout />} />
+                <Route path='/favourites' element={<Favourite />} />
+            </Route>
+                <Route element={<GuestGuard />}>
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+            </Route>
         </Routes>
         <Footer />
           </FavouriteProvider>

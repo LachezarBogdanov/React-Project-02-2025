@@ -18,7 +18,7 @@ export default function Login() {
 
         userLoginHandler(authData);
 
-        navigate('/');
+        navigate(-1);
         
         return values;
     }   
