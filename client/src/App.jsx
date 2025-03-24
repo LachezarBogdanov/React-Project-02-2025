@@ -38,7 +38,7 @@ function App() {
                 <Route path='/logout' element={<Logout />} />
                 <Route path='/favourites' element={<Favourite />} />
             </Route>
-                <Route element={<GuestGuard />}>
+            <Route element={<GuestGuard />}>
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
             </Route>
