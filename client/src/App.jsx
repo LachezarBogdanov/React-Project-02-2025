@@ -14,6 +14,7 @@ import UserProvider from './providers/UserProvider';
 import Logout from './components/Logout/Logout';
 import CartProvider from './providers/CartProvider';
 import Favourite from './components/Favourite/Favourite';
+import FavouriteProvider from './providers/favouriteProvider';
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
     <>
       <UserProvider>
         <CartProvider>
+          <FavouriteProvider>
         <Header />
         <Routes>
             <Route path='/' element={<Home />} />
@@ -33,9 +35,10 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/logout' element={<Logout />} />
-            <Route path='/favourite' element={<Favourite />} />
+            <Route path='/favourites' element={<Favourite />} />
         </Routes>
         <Footer />
+          </FavouriteProvider>
         </CartProvider>
       </UserProvider>
     </>

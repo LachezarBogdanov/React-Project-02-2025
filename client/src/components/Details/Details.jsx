@@ -3,8 +3,8 @@ import styles from './Details.module.css'
 import { useContext, useEffect, useState } from 'react';
 import { useDeleteProduct, useProduct } from '../../api/productApi';
 import { CartContext } from '../../contexts/CartContext';
-import { useSave } from '../../api/likedApi';
 import useAuth from '../../hooks/useAuth';
+import { FavouriteContext } from '../../contexts/FavouriteContext';
 
 export default function Details() {
   const { productId } = useParams();
@@ -14,8 +14,8 @@ export default function Details() {
   const { product } = useProduct(productId);
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
-  const { savePost } = useSave();
   const { _id } = useAuth();
+  const { addToFavourite } = useContext(FavouriteContext);
   
   useEffect(() => {
     if(product?.flavour) {
@@ -48,9 +48,9 @@ const handleAddToCart = () => {
 };
 
 const handleFavourite = () => {
-  savePost(productId);
+  addToFavourite(product);
 
-  navigate('/favourite');
+  navigate('/favourites');
 }
 
     return (

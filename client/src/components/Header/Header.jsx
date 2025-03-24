@@ -42,6 +42,11 @@ export default function Header (){
                         LOGOUT
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/favourites" className={({isActive}) => isActive ? styles.active : {}}>
+                    <i className='fa-solid fa-heart' />
+                    </NavLink>
+                </li>
                 </>
                 )
                 : (
@@ -70,11 +75,6 @@ export default function Header (){
               </NavLink>
             </li>
 
-            <li>
-                <NavLink to="/favourite" className={({isActive}) => isActive ? styles.active : {}}>
-                <i className='fa-solid fa-heart' />
-                </NavLink>
-            </li>
           </ul>
         </nav>
       </header>     

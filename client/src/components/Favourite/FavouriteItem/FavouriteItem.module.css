@@ -9,39 +9,25 @@
     position: relative;
 }
 
-.game-cover {
+.favouriteCover {
     width: 150px;
     border-radius: 5px;
 }
 
-.game-info {
+.favouriteInfo {
     flex-grow: 1;
     padding: 0 15px;
 }
 
-.game-info h3 {
+.favouriteInfo h3 {
     margin: 0;
 }
 
-.reviews span {
+.flavour span {
     color: #ffa500;
 }
 
-.release-date span {
-    color: #c4cdd5;
-}
-
-.cart-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-/* Price & Cart */
-.price-cart {
+.priceFavourite {
     text-align: right;
 }
 
@@ -51,7 +37,7 @@
     margin-bottom: 5px;
 }
 
-.cart-btn {
+.detailsBtn {
     background-color: #4CAF50;
     color: white;
     padding: 0.6em 1em;
@@ -69,4 +55,18 @@
 .added-date a {
     color: #c4cdd5;
     text-decoration: none;
+}
+
+.xBtn {
+    color: red;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+}
+
+.xBtn:hover {
+    background-color: white;
+    border-radius: 0.3em;
 }
