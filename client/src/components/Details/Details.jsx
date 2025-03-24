@@ -5,6 +5,7 @@ import { useDeleteProduct, useProduct } from '../../api/productApi';
 import { CartContext } from '../../contexts/CartContext';
 import useAuth from '../../hooks/useAuth';
 import { FavouriteContext } from '../../contexts/FavouriteContext';
+import Comments from '../Comments/Comments';
 
 export default function Details() {
   const { productId } = useParams();
@@ -14,7 +15,7 @@ export default function Details() {
   const { product } = useProduct(productId);
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
-  const { _id } = useAuth();
+  const { _id, isAuthenticated } = useAuth();
   const { addToFavourite } = useContext(FavouriteContext);
   
   useEffect(() => {
@@ -54,6 +55,7 @@ const handleFavourite = () => {
 }
 
     return (
+      <>
         <section className={styles.product}>
   <div className={styles.productImg}>
     <img src={product.img} alt={product.name} className={styles.detailsImg} />
@@ -114,7 +116,11 @@ const handleFavourite = () => {
       </div>
     </div>
   </div>
-</section>
-
+  </section>
+    {isAuthenticated ? (
+      <Comments />
+    )
+    : {}}
+    </>
     )
 }

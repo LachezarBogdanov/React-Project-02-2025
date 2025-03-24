@@ -1,0 +1,110 @@
+
+section.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 5em;
+}
+
+section.comments h1 {
+    font-size: 2.7em;
+}
+
+section.comments p {
+    font-size: 1.2em;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3em;
+}
+
+section.comments form{
+    width: 600px;
+    margin-bottom: 5em;
+}
+
+section.comments form > *{
+    display: block;
+}
+
+section.comments form label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+form .commentsForm {
+    display: flex;
+    width: 100%;
+}
+
+form .commentsForm input{
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #eee;
+}
+
+form .commentsForm a{
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(0, 149, 255);
+    padding: 0.5em 1em;
+    border-radius: 1em;
+}
+
+article.allComments {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.allComments .comment {
+    background-color: #e9e9e9da;
+    max-width: 300px;
+    min-height: 200px;
+    padding: 0.5em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
+}
+
+.allComments .comment .photoEmail{
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+}
+
+.allComments .comment .photoEmail img{
+    aspect-ratio: 1/1;
+    width: 4.5em;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
+}
+
+.buttons {
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.commentBtn {
+    cursor: pointer;
+    border: none;
+    background-color: red;
+    color: #fff;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 1px solid;
+}
+
+.commentBtn:hover {
+    background-color: darkred;
+}
