@@ -90,7 +90,7 @@ form h2{
     color: transparent;
 }
 
-form button.registerBtn {
+form input.registerBtn {
     text-decoration: none;
     color: #000;
     background-color: #fff;
@@ -115,4 +115,9 @@ form p > a {
 
 form p > a:hover {
     color: #333;
+}
+
+.error {
+    color: red;
+    position: absolute;
 }
