@@ -4,6 +4,7 @@ import { useRegister } from '../../api/authApi';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 export default function Register (){
     const { register } = useRegister();
@@ -27,6 +28,8 @@ export default function Register (){
         const authData = await register(values.email, values.password, values.rePassword);
 
         userLoginHandler(authData);
+
+        toast.success('Successfully registered!')
 
         navigate('/');
 

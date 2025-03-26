@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 
 import styles from './Login.module.css'
+import toast from 'react-hot-toast';
 
 export default function Login() {
     const { login } = useLogin();
@@ -24,11 +25,14 @@ export default function Login() {
     const loginHandler = async (data) => {
         const values = data;
 
-        const authData = await login(values.email, values.password);
+            const authData = await login(values.email, values.password);
+    
+            userLoginHandler(authData);
 
-        userLoginHandler(authData);
-
-        navigate(-1);
+            toast.success('Successfully logged in!')
+    
+            navigate(-1);
+   
         
         return values;
     }   

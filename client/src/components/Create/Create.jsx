@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './Create.module.css'
 import { useCreateProduct } from '../../api/productApi';
 import { useNavigate } from 'react-router';
+import toast from 'react-hot-toast';
 
 export default function Create() {
     const [selectedType, setSelectedType] = useState("");
@@ -28,6 +29,8 @@ export default function Create() {
       const productData = Object.fromEntries(formData);
 
       await create(productData);
+
+      toast.success('Successfully added product!');
 
       navigate('/shop');
     }
