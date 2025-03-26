@@ -18,6 +18,7 @@ import Favourite from './components/Favourite/Favourite';
 import FavouriteProvider from './providers/favouriteProvider';
 import AuthGuard from './components/Guards/AuthGuard';
 import GuestGuard from './components/Guards/GuestGuard';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   
@@ -27,6 +28,7 @@ function App() {
         <CartProvider>
           <FavouriteProvider>
         <Toaster position='top-right' />
+        <ScrollToTop />
 
         <Header />
         <Routes>

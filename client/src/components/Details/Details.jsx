@@ -62,16 +62,18 @@ const handleFavourite = () => {
   </div>
 
   <div className={styles.productDetails}>
-        <button onClick={handleFavourite} className={styles.favourite}><i className='fa-solid fa-heart'/></button>
     <div className={styles.title}>
       <h1>{product.name}</h1>
 
         {isOwner
           ? (
+            <>
+            <button onClick={handleFavourite} className={styles.favourite}><i className='fa-solid fa-heart'/></button>
             <div className={styles.editDelete}>
               <Link to={`/edit/${productId}`} className={styles.edit}>Edit</Link>
               <button onClick={productDeleteHandler} className={styles.delete}>Delete</button>
             </div>
+            </>
         ) : ''}
     </div>
 

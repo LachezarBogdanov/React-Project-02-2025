@@ -150,6 +150,8 @@ button.favourite {
     padding: 0.5em;
     background-color: transparent;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: 1em;
 }
 
 .accordion {
