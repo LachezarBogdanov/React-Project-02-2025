@@ -64,6 +64,10 @@ export default function Register (){
                 value: 6,
                 message: "Password must be at least 6 characters",
               },
+              pattern: {
+                value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-={}[\]:;"'<>,.?/~`|\\])[A-Za-z0-9!@#$%^&*()_+\-={}[\]:;"'<>,.?/~`|\\]+$/,
+                message: "Password must contain letters, numbers and symbols."
+              }
             })}
             placeholder="Password"
           />

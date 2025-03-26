@@ -114,3 +114,8 @@ form p > a {
 form p > a:hover {
     color: #333;
 }
+
+.error {
+    color: red;
+    position: absolute;
+}
