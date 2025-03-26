@@ -149,3 +149,14 @@ form p > a:hover {
     background: lightgray;
   }
 
+  .error {
+    color: red;
+    position: absolute;
+  }
+
+  .errorSelect{
+    color: red;
+    margin-left: -15em;
+    margin-top: -1.5em;
+    margin-bottom: 1em;
+  }

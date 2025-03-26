@@ -37,9 +37,10 @@ form h2{
 }
 
 .field {
-    margin-bottom: 3em;
+    margin-bottom: 3.2em;
     position: relative;
 }
+
 
 .field > * {
     display: block;
@@ -101,8 +102,12 @@ form p > a:hover {
 }
 
 .option-menu {
-    margin-bottom: 2em;
-    margin-top: -1em;
+    margin-bottom: 3em;
+    margin-top: -1.5em;
+}
+
+.option-menu:nth-of-type(2) {
+    margin-bottom: 3.3em;
 }
 
 .option-menu p {
@@ -116,7 +121,7 @@ form p > a:hover {
 .select {
     width: 100%;
   border: none;
-  border: 1px solid #fff; /* Underline */
+  border: 1px solid #fff;
   background: transparent;
   font-size: 16px;
   padding: 5px;
@@ -144,3 +149,17 @@ form p > a:hover {
     justify-self: start;
     padding-bottom: 0;
 }
+
+.error {
+    color: red;
+    position: absolute;
+    top: 70%;
+}
+
+.errorSelect{
+    color: red;
+    margin-left: -15em;
+    margin-top: -1.5em;
+    margin-bottom: 1em;
+  }
+

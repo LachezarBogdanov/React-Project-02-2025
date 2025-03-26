@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styles from './Create.module.css'
 import { useCreateProduct } from '../../api/productApi';
 import { useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
+import { useForm } from 'react-hook-form';
 
 export default function Create() {
     const [selectedType, setSelectedType] = useState("");
@@ -10,12 +11,38 @@ export default function Create() {
     const { create } = useCreateProduct();
     const navigate = useNavigate();
 
-    const sizeMap = {
-      protein: ["500g", "1kg", "2kg"],
-      "pre-workout": ["30 servings", "60 servings"],
-      "muscle-mass": ["1kg", "3kg", "5kg"],
-      "weight-control": ["30 caps", "60 caps", "90 caps"],
-    };
+    const {
+      register,
+      handleSubmit,
+      setValue,
+      watch,
+      formState: { errors },
+    } = useForm();
+    
+    const sizeMap = useMemo(
+      () => ({
+        protein: ["500g", "1kg", "2kg"],
+        "pre-workout": ["30 servings", "60 servings"],
+        "muscle-mass": ["1kg", "3kg", "5kg"],
+        "weight-control": ["30 caps", "60 caps", "90 caps"],
+      }),
+      []
+    );
+
+    const selectedTypes = watch('type');
+
+    useEffect(() => {
+
+          if (selectedTypes) {
+            setSizeOptions(sizeMap[selectedTypes] || []);
+          } else {
+            setSizeOptions([]);
+          }
+      
+          // Reset size selection when type changes
+          setValue("size", "");
+        }, [selectedTypes, setValue, sizeMap]);
+    
   
     const handleTypeChange = (event) => {
       const type = event.target.value;
@@ -24,9 +51,13 @@ export default function Create() {
       setSizeOptions(sizeMap[type] || []);
     };
 
-    const createHandler = async (formData) => {
+    const onSubmit = (data) => {
+      createHandler(data);
+    }
 
-      const productData = Object.fromEntries(formData);
+    const createHandler = async (data) => {
+
+      const productData = data;
 
       await create(productData);
 
@@ -37,12 +68,21 @@ export default function Create() {
   
     return (
       <main className={styles["main-create"]}>
-        <form action={createHandler}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <h2>Add Product</h2>
   
         <div className={styles["option-menu"]}>
           <p>Type:</p>
-          <select name="type" id="type" className={styles.select} onChange={handleTypeChange}>
+          <select
+            id="type"
+            className={styles.select}
+            // onChange={handleTypeChange}
+            {...register('type', {
+              required: 'Type is required!',
+              onChange: handleTypeChange
+            })}
+          >
+            
             <option value="">Select Type</option>
             <option value="protein">Protein</option>
             <option value="pre-workout">Pre Workout</option>
@@ -50,10 +90,19 @@ export default function Create() {
             <option value="weight-control">Weight Control</option>
           </select>
         </div>
+          {errors.type && <p className={styles.errorSelect}>{errors.type.message}</p>}
     
         {<div className={styles["option-menu"]}>
             <p>Size:</p>
-            <select name="size" id="size" className={styles.select}>
+            <select
+              id="size"
+              name='size'
+              className={styles.select}
+              {...register('size', {
+                required: 'Size is required!',
+                watch: 'type',
+              })}
+              >
               {sizeOptions.length > 0 ? (
                 sizeOptions.map((size) => <option key={size} value={size}>{size}</option>)
               ) : (
@@ -61,32 +110,100 @@ export default function Create() {
               )}
             </select>
           </div>}
+            {errors.size && <p className={styles.errorSelect}>{errors.size.message}</p>}
           
           <div className={styles.field}>
-            <input type="text" name="name" id="name" placeholder="Name" />
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Name" 
+              {...register('name', {
+                required: 'Name is required!',
+                minLength: {
+                  value: 5,
+                  message: 'Name must be at least 5 characters!'
+                }
+              })}
+            />
+
             <label htmlFor="name">Product Name</label>
+            {errors.name && <p className={styles.error}>{errors.name.message}</p>}
           </div>
   
           <div className={styles.field}>
-            <input type="text" name="img" id="img" placeholder="Image" />
+
+            <input
+              type="text"
+              id="img"
+              placeholder="Image" 
+              {...register('img', {
+                required: 'ImageUrl is required!',
+                pattern: {
+                  value: /^https?:\/\/.+/g,
+                  message: 'Invalid image url'
+                }
+              })}
+            />
+
             <label htmlFor="img">Image URL</label>
+            {errors.img && <p className={styles.error}>{errors.img.message}</p>}
           </div>
   
   
           <div className={styles.field}>
-            <input type="number" name="price" id="price" placeholder="Price" />
+
+            <input
+              type="number"
+              id="price"
+              placeholder="Price" 
+              {...register('price', {
+                required: 'Price is required!',
+                min: {
+                  value: 1,
+                  message: 'Price must me minimum 1'
+                },
+              })}
+            />
+
             <label htmlFor="price">Price</label>
+            {errors.price && <p className={styles.error}>{errors.price.message}</p>}
           </div>
   
           
           {selectedType !== 'weight-control' ? <div className={styles.field}>
-            <input type="text" name="flavour" id="flavour" placeholder="Flavour" />
+
+            <input
+              type="text"
+              id="flavour"
+              placeholder="Flavour" 
+              {...register('flavour', {
+                required: 'Flavour is required!',
+                minLength: {
+                  value: 3,
+                  message: 'Flavour must be minimum 3 characters'
+                }
+              })}
+            />
+
             <label htmlFor="flavour">Flavours (e.g., Chocolate, Vanilla)</label>
+            {errors.flavour && <p className={styles.error}>{errors.flavour.message}</p>}
           </div> : <div></div>}
   
           <div className={styles.field}>
             <p className={styles['description-p']}>Description</p>
-            <textarea name="description" id="description"></textarea>
+            <textarea
+              id="description"
+              {...register('description', {
+                required: 'Description is required!',
+                minLength: {
+                  value: 10,
+                  message: 'Description must be minimum 10 characters'
+                }
+              })}
+            >
+            </textarea>
+            {errors.description && <p className={styles.error}>{errors.description.message}</p>}
           </div>
   
           <button className={styles.createBtn} type='submit'>Create</button>
