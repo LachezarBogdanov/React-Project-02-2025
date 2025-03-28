@@ -39,7 +39,7 @@ export default function Login() {
     return (
         <>
             <main className={styles.loginMain}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.loginForm}>
             <h2>Login</h2>
 
             <div className={styles.field}>

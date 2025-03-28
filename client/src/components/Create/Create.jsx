@@ -68,7 +68,7 @@ export default function Create() {
   
     return (
       <main className={styles["main-create"]}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.createForm}>
           <h2>Add Product</h2>
   
         <div className={styles["option-menu"]}>

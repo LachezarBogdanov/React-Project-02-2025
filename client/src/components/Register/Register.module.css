@@ -21,7 +21,7 @@ main.registerMain::after {
     position: absolute;
 }
 
-form {
+form.registerForm {
     min-height: 400px;
     padding: 1.5em;
     width: 100%;
@@ -31,7 +31,7 @@ form {
     background: linear-gradient(135deg, rgb(104, 104, 104), rgb(184, 182, 182));
 }
 
-form h2{
+form.registerForm h2{
     padding-bottom: 3em;
     color: #fff;
 }
@@ -90,7 +90,7 @@ form h2{
     color: transparent;
 }
 
-form input.registerBtn {
+form.registerForm input.registerBtn {
     text-decoration: none;
     color: #000;
     background-color: #fff;
@@ -103,17 +103,17 @@ form input.registerBtn {
     cursor: pointer;
 }
 
-form p {
+form.registerForm p {
     color: #333;
     margin-top: 0.5em;
     padding-bottom: 1em;
 }
 
-form p > a {
+form.registerForm p > a {
     color: #000;
 }
 
-form p > a:hover {
+form.registerForm p > a:hover {
     color: #333;
 }
 

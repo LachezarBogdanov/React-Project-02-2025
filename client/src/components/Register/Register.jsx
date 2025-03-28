@@ -38,7 +38,7 @@ export default function Register (){
 
     return (
        <main className={styles.registerMain}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.registerForm}>
         <h2>Register</h2>
 
         <div className={styles.field}>

@@ -21,7 +21,7 @@ main.edit-main::after {
     position: absolute;
 }
 
-form {
+form.editForm {
     min-height: 400px;
     padding: 1.5em;
     width: 100%;
@@ -31,7 +31,7 @@ form {
     background: linear-gradient(135deg, rgb(104, 104, 104), rgb(184, 182, 182));
 }
 
-form h2{
+form.editForm h2{
     padding-bottom: 3em;
     color: #fff;
 }
@@ -75,7 +75,7 @@ form h2{
     color: transparent;
 }
 
-form button.editBtn {
+form.editForm button.editBtn {
     text-decoration: none;
     color: #000;
     background-color: #fff;
@@ -88,16 +88,16 @@ form button.editBtn {
     cursor: pointer;
 }
 
-form p {
+form.editForm p {
     color: #333;
     margin-top: 0.5em;
 }
 
-form p > a {
+form.editForm p > a {
     color: #000;
 }
 
-form p > a:hover {
+form.editForm p > a:hover {
     color: #333;
 }
 

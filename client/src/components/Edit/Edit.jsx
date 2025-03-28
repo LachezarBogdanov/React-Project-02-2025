@@ -83,7 +83,7 @@ export default function Edit() {
 
     return (
         <main className={styles["edit-main"]}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.editForm}>
         <h2>Edit</h2>
 
       <div className={styles["option-menu"]}>

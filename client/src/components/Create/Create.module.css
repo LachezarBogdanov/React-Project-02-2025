@@ -21,7 +21,7 @@ main.main-create::after {
     position: absolute;
 }
 
-form {
+form.createForm {
     min-height: 400px;
     padding: 1.5em;
     width: 100%;
@@ -31,7 +31,7 @@ form {
     background: linear-gradient(135deg, rgb(104, 104, 104), rgb(184, 182, 182));
 }
 
-form h2{
+form.createForm h2{
     padding-bottom: 3em;
     color: #fff;
 }
@@ -84,7 +84,7 @@ form h2{
     color: transparent;
 }
 
-form button.createBtn {
+form.createForm button.createBtn {
     text-decoration: none;
     color: #000;
     background-color: #fff;
@@ -97,16 +97,16 @@ form button.createBtn {
     cursor: pointer;
 }
 
-form p {
+form.createForm p {
     color: #333;
     margin-top: 0.5em;
 }
 
-form p > a {
+form.createForm p > a {
     color: #000;
 }
 
-form p > a:hover {
+form.createForm p > a:hover {
     color: #333;
 }
 
