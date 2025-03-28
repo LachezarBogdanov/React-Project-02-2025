@@ -1,0 +1,41 @@
+.comment {
+    background-color: #e9e9e9da;
+    max-width: 70%;
+    min-height: 150px;
+    padding: 0.5em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
+    margin: 1.5em auto;
+}
+
+.comment .photoEmail{
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+}
+
+.comment .photoEmail img{
+    aspect-ratio: 1/1;
+    width: 4.5em;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
+}
+
+.commentBtn {
+    cursor: pointer;
+    border: none;
+    background-color: red;
+    color: #fff;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 1px solid;
+}
+
+.commentBtn:hover {
+    background-color: darkred;
+}
