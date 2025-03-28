@@ -88,7 +88,7 @@ if(!product) {
     {flavours && <h2>{product.flavour}</h2>}
     <p className={styles.price}>{product.price}lv</p>
 
-      {flavours && (
+      {product.flavour && (
         <article className={styles.flavour}>
       <p>Flavour</p>
       <select name="flavour" id="flavour">

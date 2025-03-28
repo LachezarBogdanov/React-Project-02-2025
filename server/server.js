@@ -1400,6 +1400,46 @@
     		}
     	},
     	comments: {
+            "d314de68-8006-4bba-8cba-3c591078c898" :{
+                "_ownerId": "0dac74db-76d4-45ac-8235-c7567679e2e8",
+                "productId": "c37690dd-69cc-4a10-ba2f-03554bd8ba12",
+                "email": "lachezar_bogdanov2006@abv.bg",
+                "comment": "First comment",
+                "_createdOn": 1743174780910,
+                "_id": "d314de68-8006-4bba-8cba-3c591078c898"
+            },
+            "020ce3ba-5d73-48e5-8596-709d328a0a28": {
+                "_ownerId": "0dac74db-76d4-45ac-8235-c7567679e2e8",
+                "productId": "68304574-9cfe-4a34-b5c8-4fe098a82c7b",
+                "email": "lachezar_bogdanov2006@abv.bg",
+                "comment": "This gainer is the best",
+                "_createdOn": 1743176672796,
+                "_id": "020ce3ba-5d73-48e5-8596-709d328a0a28"
+            },
+            "5351cb1c-cf77-45d8-b8ce-ea84d5c10bad": {
+                "_ownerId": "0dac74db-76d4-45ac-8235-c7567679e2e8",
+                "productId": "a7f2d09e-d7e0-471c-9ae3-7941cd09825a",
+                "email": "lachezar_bogdanov2006@abv.bg",
+                "comment": "This is the best protein ever made!",
+                "_createdOn": 1743177266560,
+                "_id": "5351cb1c-cf77-45d8-b8ce-ea84d5c10bad"
+            },
+            "b6238209-2735-4fee-80f4-c037d9528d04": {
+                "_ownerId": "0dac74db-76d4-45ac-8235-c7567679e2e8",
+                "productId": "486755d6-60bf-471e-a8f0-b837b060fbbc",
+                "email": "lachezar_bogdanov2006@abv.bg",
+                "comment": "First comment for this product",
+                "_createdOn": 1743177547207,
+                "_id": "b6238209-2735-4fee-80f4-c037d9528d04"
+            },
+            "0d6fdad6-2484-44c1-afd0-8e807bbf6f4b": {
+                "_ownerId": "587b0030-bddc-4dc2-82be-a22edc19621d",
+                "productId": "a7f2d09e-d7e0-471c-9ae3-7941cd09825a",
+                "email": "ivo@abv.bg",
+                "comment": "Another comment",
+                "_createdOn": 1743177712774,
+                "_id": "0d6fdad6-2484-44c1-afd0-8e807bbf6f4b"
+            }
     	},
     	records: {
     		i01: {
