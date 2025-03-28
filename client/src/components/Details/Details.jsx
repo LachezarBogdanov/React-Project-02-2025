@@ -6,6 +6,7 @@ import { CartContext } from '../../contexts/CartContext';
 import useAuth from '../../hooks/useAuth';
 import { FavouriteContext } from '../../contexts/FavouriteContext';
 import Comments from '../Comments/Comments';
+import Spinner from '../Spinner/Spinner';
 
 export default function Details() {
   const { productId } = useParams();
@@ -15,7 +16,7 @@ export default function Details() {
   const { product } = useProduct(productId);
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
-  const { _id, isAuthenticated } = useAuth();
+  const { _id, isAuthenticated, email } = useAuth();
   const { addToFavourite } = useContext(FavouriteContext);
   
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Details() {
     }
   }, [product])
 
-  const isOwner = product._ownerId === _id;
+  const isOwner = product?._ownerId === _id;
 
   const productDeleteHandler = async () => {
     const choice = confirm('Are you sure you want to delete this product?');
@@ -54,6 +55,10 @@ const handleFavourite = () => {
   navigate('/favourites');
 }
 
+if(!product) {
+  return <Spinner />;
+}
+
     return (
       <>
         <section className={styles.product}>
@@ -65,10 +70,13 @@ const handleFavourite = () => {
     <div className={styles.title}>
       <h1>{product.name}</h1>
 
+        {isAuthenticated 
+          ? <button onClick={handleFavourite} className={styles.favourite}><i className='fa-solid fa-heart'/></button>
+          : '' }
+
         {isOwner
           ? (
             <>
-            <button onClick={handleFavourite} className={styles.favourite}><i className='fa-solid fa-heart'/></button>
             <div className={styles.editDelete}>
               <Link to={`/edit/${productId}`} className={styles.edit}>Edit</Link>
               <button onClick={productDeleteHandler} className={styles.delete}>Delete</button>
@@ -77,10 +85,10 @@ const handleFavourite = () => {
         ) : ''}
     </div>
 
-    <h2>{product.flavour}</h2>
+    {flavours && <h2>{product.flavour}</h2>}
     <p className={styles.price}>{product.price}lv</p>
 
-      {product.flavour && (
+      {flavours && (
         <article className={styles.flavour}>
       <p>Flavour</p>
       <select name="flavour" id="flavour">
@@ -96,17 +104,22 @@ const handleFavourite = () => {
       <p>{product.size}</p>
     </article>
 
-    <article className={styles.quantity}>
-      <p>Quantity</p>
-      <input
-      type="number"
-      min={1}
-      defaultValue={1} 
-      onChange={handleQuantityChange}
-      />
-    </article>
+      {isAuthenticated
+        ? (
+          <>
+          <article className={styles.quantity}>
+        <p>Quantity</p>
+        <input
+        type="number"
+        min={1}
+        defaultValue={1} 
+        onChange={handleQuantityChange}
+        />
+      </article>
 
-    <button onClick={handleAddToCart} className={styles.addToCart}>Add to Cart</button>
+      <button onClick={handleAddToCart} className={styles.addToCart}>Add to Cart</button>
+        </>
+) : null}
 
     <div className={styles.accordion}>
       <input type="checkbox" id="item1" hidden />
@@ -120,9 +133,9 @@ const handleFavourite = () => {
   </div>
   </section>
     {isAuthenticated ? (
-      <Comments />
+      <Comments productId={productId} email={email} />
     )
-    : {}}
+    : null}
     </>
     )
 }

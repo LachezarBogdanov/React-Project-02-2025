@@ -1,16 +1,15 @@
 import styles from './Comment.module.css'
 
-export default function Comment() {
+export default function Comment({
+    comment,
+}) {
     return (
         <div className={styles.comment}>
               <div className={styles.photoEmail}>
                 <img src="/card3.jpg" alt="#" />
-                <p>Lachezar Bogdanov</p>
+                <p>{comment.email}</p>
               </div>
-              <p>This is a good comment for this section</p>
-              <div className={styles.buttons}>
-                <button className={styles.commentBtn}>Delete</button>
-              </div>
+              <p>{comment.comment}</p>
             </div>
     );
 }
