@@ -39,7 +39,6 @@ export default function Create() {
             setSizeOptions([]);
           }
       
-          // Reset size selection when type changes
           setValue("size", "");
         }, [selectedTypes, setValue, sizeMap]);
     
@@ -76,7 +75,6 @@ export default function Create() {
           <select
             id="type"
             className={styles.select}
-            // onChange={handleTypeChange}
             {...register('type', {
               required: 'Type is required!',
               onChange: handleTypeChange
@@ -89,8 +87,8 @@ export default function Create() {
             <option value="muscle-mass">Muscle Mass</option>
             <option value="weight-control">Weight Control</option>
           </select>
-        </div>
           {errors.type && <p className={styles.errorSelect}>{errors.type.message}</p>}
+        </div>
     
         {<div className={styles["option-menu"]}>
             <p>Size:</p>
@@ -109,11 +107,10 @@ export default function Create() {
                 <option value="">Select a type first</option>
               )}
             </select>
-          </div>}
             {errors.size && <p className={styles.errorSelect}>{errors.size.message}</p>}
+          </div>}
           
           <div className={styles.field}>
-
             <input
               type="text"
               id="name"

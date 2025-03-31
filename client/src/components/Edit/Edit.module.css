@@ -150,16 +150,16 @@ form.editForm p > a:hover {
     padding-bottom: 0;
 }
 
-.error {
+.field .error {
     color: red;
     position: absolute;
     top: 70%;
 }
 
-.errorSelect{
+.option-menu .errorSelect{
     color: red;
-    margin-left: -15em;
-    margin-top: -1.5em;
-    margin-bottom: 1em;
+    margin-bottom: -2.5em;
   }
+
+
 

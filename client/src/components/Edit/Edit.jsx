@@ -103,8 +103,8 @@ export default function Edit() {
           <option value="muscle-mass">Muscle Mass</option>
           <option value="weight-control">Weight Control</option>
         </select>
-      </div>
         {errors.type && <p className={styles.errorSelect}>{errors.type.message}</p>}
+      </div>
 
       <div className={styles["option-menu"]}>
         <p>Size:</p>
@@ -120,8 +120,8 @@ export default function Edit() {
             sizeOptions?.map((size) => <option key={size} value={size}>{size}</option>)
           }
         </select>
-      </div>
         {errors.size && <p className={styles.errorSelect}>{errors.size.message}</p>}
+      </div>
 
     <div className={styles.field}>
       <input
@@ -190,7 +190,7 @@ export default function Edit() {
         })}
       />
       <label htmlFor="price">Price</label>
-      {errors.price && <p className={styles.price}>{errors.price.message}</p>}
+      {errors.price && <p className={styles.error}>{errors.price.message}</p>}
     </div>
 
 
@@ -206,6 +206,7 @@ export default function Edit() {
             }
           })}
         ></textarea>
+        {errors.description && <p>{errors.description.message}</p>}
     </div>
 
     <button className={styles.editBtn} type='submit'>Edit</button>

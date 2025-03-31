@@ -149,14 +149,12 @@ form.createForm p > a:hover {
     background: lightgray;
   }
 
-  .error {
+.field .error {
     color: red;
     position: absolute;
   }
 
-  .errorSelect{
+.option-menu p.errorSelect{
     color: red;
-    margin-left: -15em;
-    margin-top: -1.5em;
-    margin-bottom: 1em;
+    margin-bottom: -1.5em;
   }
