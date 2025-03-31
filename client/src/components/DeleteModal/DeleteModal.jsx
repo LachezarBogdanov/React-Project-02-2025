@@ -5,7 +5,6 @@ export default function DeleteModal({
     onDelete,
     message,
  }) {
-    // onConfirm, message 
 
     return (
         <div className={styles["modal-overlay"]}>

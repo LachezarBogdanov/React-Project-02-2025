@@ -25,9 +25,6 @@ export default function Comments({
       setComments(updatedComments);
     }, [dataComments, _id]);
 
-    console.log(comments);
-    
-    
      const {
             register,
             handleSubmit,

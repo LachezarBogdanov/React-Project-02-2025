@@ -7,6 +7,8 @@ import useAuth from '../../hooks/useAuth';
 import { FavouriteContext } from '../../contexts/FavouriteContext';
 import Comments from '../Comments/Comments';
 import Spinner from '../Spinner/Spinner';
+import DeleteModal from '../DeleteModal/DeleteModal';
+import toast from 'react-hot-toast';
 
 export default function Details() {
   const { productId } = useParams();
@@ -18,6 +20,7 @@ export default function Details() {
   const { addToCart } = useContext(CartContext);
   const { _id, isAuthenticated, email } = useAuth();
   const { addToFavourite } = useContext(FavouriteContext);
+  const [showModal, setShowModal] = useState(false);
   
   useEffect(() => {
     if(product?.flavour) {
@@ -26,18 +29,22 @@ export default function Details() {
   }, [product])
 
   const isOwner = product?._ownerId === _id;
-
+  
+  const handleCancel = () => {
+    setShowModal(false); 
+  }
+  
   const productDeleteHandler = async () => {
-    const choice = confirm('Are you sure you want to delete this product?');
-
-    if(!choice) {
-      return;
-    }
 
     await deleteGame(productId);
 
+    setShowModal(false);
+
+    toast.success('Successfully deleted product!');
+
     navigate('/shop');
   }
+  
 
   const handleQuantityChange = (e) => {
     setQuantity(Number(e.target.value));
@@ -55,6 +62,7 @@ const handleFavourite = () => {
   navigate('/favourites');
 }
 
+
 if(!product) {
   return <Spinner />;
 }
@@ -62,6 +70,13 @@ if(!product) {
     return (
       <>
         <section className={styles.product}>
+          {showModal && 
+            <DeleteModal
+              onClose={handleCancel}
+              onDelete={productDeleteHandler}
+              message={'product'}
+           />}
+            
   <div className={styles.productImg}>
     <img src={product.img} alt={product.name} className={styles.detailsImg} />
   </div>
@@ -79,7 +94,7 @@ if(!product) {
             <>
             <div className={styles.editDelete}>
               <Link to={`/edit/${productId}`} className={styles.edit}>Edit</Link>
-              <button onClick={productDeleteHandler} className={styles.delete}>Delete</button>
+              <button onClick={() => setShowModal(true)} className={styles.delete}>Delete</button>
             </div>
             </>
         ) : ''}
