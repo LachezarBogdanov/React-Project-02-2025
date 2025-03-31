@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.5);
     margin: 1.5em auto;
+    position: relative;
 }
 
 .comment .photoEmail{
@@ -38,4 +39,20 @@
 
 .commentBtn:hover {
     background-color: darkred;
+}
+
+.xMark {
+    position: absolute;
+    right: 1%;
+    padding: 0.1em 0.3em;
+    background-color: #ccc;
+    border-radius: 0.4em;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: black;
+}
+
+.xMark:hover {
+    background-color: #aaa;
 }

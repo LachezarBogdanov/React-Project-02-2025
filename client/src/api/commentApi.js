@@ -51,3 +51,15 @@ export const useCreateComment = () => {
         create,
     }
 }
+
+export const useDeleteComment = () => {
+    const { request } = useAuth();
+
+    const deleteComment = async (commentId) => {
+        return await request.delete(`${baseUrl}/${commentId}`);
+    }
+
+    return {
+        deleteComment,
+    }
+}

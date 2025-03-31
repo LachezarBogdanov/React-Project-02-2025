@@ -1,22 +1,32 @@
 import { useForm } from 'react-hook-form';
 import Comment from './Comment/Comment';
-import styles from './Comments.module.css'
-import { useComments, useCreateComment } from '../../api/commentApi';
+import styles from './Comments.module.css';
+import { useComments, useCreateComment, useDeleteComment } from '../../api/commentApi';
 import toast from 'react-hot-toast';
 import Spinner from '../Spinner/Spinner';
 import { useEffect, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 export default function Comments({
     productId,
     email,
-}) {
+  }) {
     const { create } = useCreateComment();
     const { comments: dataComments, pending } = useComments(productId);
     const [comments, setComments] = useState(dataComments);
+    const { deleteComment } = useDeleteComment();
+    const { _id } = useAuth();
 
     useEffect(() => {
-        setComments(dataComments);
-    }, [dataComments]);
+      const updatedComments = dataComments.map((comment) => ({
+        ...comment,
+        _ownerId: comment._ownerId || _id,
+      }));
+      setComments(updatedComments);
+    }, [dataComments, _id]);
+
+    console.log(comments);
+    
     
      const {
             register,
@@ -32,19 +42,22 @@ export default function Comments({
     const handleAddComment = async (data) => {
         const comment = data.comment;
 
-        const addStateComment = {
-            email,
-            comment: data.comment,
-        }
-
-        await create(productId, email, comment);
+        const result = await create(productId, email, comment);
         
-        setComments(comments => [...comments, addStateComment]);
+        setComments(comments => [...comments, result]);
 
         reset();
 
         toast.success('Successfully posted comment!');
     }
+
+      const handleDeleteComment = async (commentId) => {
+          await deleteComment(commentId);
+
+          setComments((comments) => comments.filter(comment => comment._id !== commentId));
+
+          toast.success('Successfully deleted comment!');
+      }
     
     return (
         <section className={styles.comments}>
@@ -76,7 +89,13 @@ export default function Comments({
                     pending
                     ? <Spinner />
                 : comments.map(comment => (
-                    <Comment key={comment._id} comment={comment}/>
+                    <Comment
+                      key={comment._id}
+                      userId={_id}
+                      comment={comment}
+                      deleteComment={handleDeleteComment}
+                      productId={productId}
+                    />
                 )) 
             )
             :   <p className={styles.noComments}>No comments yet.</p>
