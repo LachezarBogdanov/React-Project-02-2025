@@ -3,6 +3,7 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useProducts, useSortedProducts } from '../../api/productApi';
 import Spinner from '../Spinner/Spinner';
 import { useParams } from 'react-router';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 export default function Shop() {
     const { products, isPending } = useProducts();
@@ -16,6 +17,7 @@ export default function Shop() {
   <h1>Nutritional supplements</h1>
   <p>Free delivery on orders over 100 BGN with your favorite courier</p>
 </section>
+<DeleteModal />
 
 <main className={styles.shopMain}>
   <div className={styles.select}>
