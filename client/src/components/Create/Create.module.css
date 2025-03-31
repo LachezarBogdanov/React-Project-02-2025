@@ -11,6 +11,8 @@ main.main-create {
     align-items: center;
     position: relative;
     z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main.main-create::after {
@@ -58,7 +60,7 @@ form.createForm h2{
     color: #fff;
 }
 
-.description-p {
+.field .description-p {
     color: #fff;
     justify-self: start;
     padding-bottom: 0;
@@ -157,4 +159,8 @@ form.createForm p > a:hover {
 .option-menu p.errorSelect{
     color: red;
     margin-bottom: -1.5em;
+  }
+
+  .option-menu p.optionP {
+    color: white;
   }

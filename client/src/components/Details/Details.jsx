@@ -100,7 +100,7 @@ if(!product) {
         ) : ''}
     </div>
 
-    {flavours && <h2>{product.flavour}</h2>}
+    {/* {flavours && <h2>{product.flavour}</h2>} */}
     <p className={styles.price}>{product.price}lv</p>
 
       {product.flavour && (

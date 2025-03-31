@@ -113,6 +113,11 @@ section.product button.addToCart {
     margin-bottom: 2em;
     border: none;
     width: 100%;
+    cursor: pointer;
+}
+
+section.product button.addToCart:hover {
+    background-color: darkred;
 }
 
 .productDetails .title {

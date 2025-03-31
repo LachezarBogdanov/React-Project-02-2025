@@ -71,7 +71,7 @@ export default function Create() {
           <h2>Add Product</h2>
   
         <div className={styles["option-menu"]}>
-          <p>Type:</p>
+          <p className={styles.optionP}>Type:</p>
           <select
             id="type"
             className={styles.select}
@@ -91,7 +91,7 @@ export default function Create() {
         </div>
     
         {<div className={styles["option-menu"]}>
-            <p>Size:</p>
+            <p className={styles.optionP}>Size:</p>
             <select
               id="size"
               name='size'

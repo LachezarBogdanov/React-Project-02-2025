@@ -72,7 +72,7 @@ export default function Comments({
       })} 
       placeholder="Comment" 
     />
-      <button type='submit'>Comment</button>
+      <button type='submit' className={styles.commentBtn}>Comment</button>
     </div>
     {errors.comment && <p className={styles.error}>{errors.comment.message}</p>}
   </form>

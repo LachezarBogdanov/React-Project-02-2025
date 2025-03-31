@@ -87,7 +87,7 @@ export default function Edit() {
         <h2>Edit</h2>
 
       <div className={styles["option-menu"]}>
-        <p>Type:</p>
+        <p className={styles.optionP}>Type:</p>
         <select
           id="type"
           className={styles.select}
@@ -107,7 +107,7 @@ export default function Edit() {
       </div>
 
       <div className={styles["option-menu"]}>
-        <p>Size:</p>
+        <p className={styles.optionP}>Size:</p>
         <select
         id="size"
         className={styles.select}
@@ -176,7 +176,7 @@ export default function Edit() {
       {errors.flavour && <p className={styles.error}>{errors.flavour.message}</p>}
     </div> : <div></div>}
 
-    <div className={styles.field}>
+    <div className={styles["field"]}>
       <input
         type="number"
         id="price"

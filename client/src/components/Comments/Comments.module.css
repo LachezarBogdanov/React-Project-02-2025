@@ -72,3 +72,12 @@ article.allComments {
     text-align: center;
 }
 
+.commentBtn {
+    cursor: pointer;
+    border-color: lightblue;
+}
+
+.commentBtn:hover {
+    background-color: darkblue;
+}
+
