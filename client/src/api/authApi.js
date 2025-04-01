@@ -51,15 +51,7 @@ export const useLogout = () => {
         };
 
         request.get(`${baseUrl}/logout`, null, options)
-        .then(response => {
-            if (response.ok) {
-                return userLogoutHandler();
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            
-        })
+            .finally(userLogoutHandler);
         
     }, [accessToken, userLogoutHandler]);
 
