@@ -39,13 +39,21 @@ export default function Comments({
     const handleAddComment = async (data) => {
         const comment = data.comment;
 
-        const result = await create(productId, email, comment);
-        
-        setComments(comments => [...comments, result]);
+        try{
+ 
+          const result = await create(productId, email, comment);
+          
+          setComments(comments => [...comments, result]);
+          
+          reset();
+          
+          toast.success('Successfully posted comment!');
 
-        reset();
+        }catch(err) {
 
-        toast.success('Successfully posted comment!');
+          return toast.error(err.message);
+          
+        }
     }
 
       const handleDeleteComment = async (commentId) => {

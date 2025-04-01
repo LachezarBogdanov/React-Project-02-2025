@@ -74,11 +74,19 @@ export default function Edit() {
         const editFormHandler = async (data) => {
           const editData = data;
 
-          await edit(productId, editData);
+          try{
 
-          toast.success('Successfully updated product!')
+            await edit(productId, editData);
+            
+            toast.success('Successfully updated product!')
+            
+            navigate(`/details/${productId}`);
 
-          navigate(`/details/${productId}`);
+          } catch(err) {
+
+            return toast.error(err.message);
+            
+          }
         }
 
     return (

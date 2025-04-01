@@ -58,11 +58,20 @@ export default function Create() {
 
       const productData = data;
 
-      await create(productData);
+      try{
+ 
+        await create(productData);
+        
+        toast.success('Successfully added product!');
+        
+        navigate('/shop');
 
-      toast.success('Successfully added product!');
+      } catch(err) {
 
-      navigate('/shop');
+        return toast.error(err.message);
+
+      }
+      
     }
   
     return (
