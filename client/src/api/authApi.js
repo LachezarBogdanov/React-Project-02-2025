@@ -41,7 +41,6 @@ export const useLogout = () => {
 
     useEffect(() => {
         if(!accessToken) {
-            userLogoutHandler();
             return;
         }
 
@@ -51,8 +50,20 @@ export const useLogout = () => {
             }
         };
 
-        request.get(`${baseUrl}/logout`, null, options)
-            .then(userLogoutHandler);
+        request.get(`${baseUrl}/logout`)
+        .then(response => {
+            if (response.ok) {
+            return response.text();
+            }
+            throw new Error('Logout failed');
+        })
+        .then(text => {
+            userLogoutHandler();
+        })
+        .catch(error => {
+            console.error('Logout error:', error);
+            userLogoutHandler();
+        });
         
     }, [accessToken, userLogoutHandler]);
 
