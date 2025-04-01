@@ -53,7 +53,7 @@ export const useLogout = () => {
         request.get(`${baseUrl}/logout`, null, options)
         .then(response => {
             if (response.ok) {
-            return response.text();
+                return userLogoutHandler();
             }
         })
         
