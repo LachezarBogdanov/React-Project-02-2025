@@ -8,9 +8,9 @@ const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
 export const useLogin = () => {
     const login = async (email, password) => {
 
-        const result = await request.post(`${baseUrl}/login`, {email, password});
-
-        return result;
+            const result = await request.post(`${baseUrl}/login`, {email, password});
+            
+            return result;
        
     }
 

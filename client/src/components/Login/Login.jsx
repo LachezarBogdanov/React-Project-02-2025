@@ -31,10 +31,14 @@ export default function Login() {
             userLoginHandler(authData);
 
             toast.success('Successfully logged in!')
-    
+            
             navigate(-1);
         } catch (error) {
-            toast.error(error);
+            console.log('second');
+            
+            toast.error(error.message);
+
+            return;
         }
    
         

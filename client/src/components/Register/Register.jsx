@@ -28,13 +28,13 @@ export default function Register (){
         try {
           const authData = await register(values.email, values.password, values.rePassword);
 
-        userLoginHandler(authData);
+          userLoginHandler(authData);
 
-        toast.success('Successfully registered!')
+          toast.success('Successfully registered!')
 
-        navigate('/');
+          navigate('/');
         } catch (error) {
-          toast.error(error);
+          return toast.error(error.message);
         }
 
         return values;
