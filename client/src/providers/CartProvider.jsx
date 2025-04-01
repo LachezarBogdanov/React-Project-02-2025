@@ -61,8 +61,13 @@ export default function CartProvider({
         return cartItems.reduce((total, product) => total + product.price * product.quantity, 0);
     }
 
+    const clearCart = () => {
+        setCartItems([]);
+        return localStorage.removeItem('cart');
+    }
+
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, updateQuantity, calculateTotal, removeProduct }}>
+        <CartContext.Provider value={{ cartItems, addToCart, updateQuantity, calculateTotal, removeProduct, clearCart }}>
             {children}
         </CartContext.Provider>
     )

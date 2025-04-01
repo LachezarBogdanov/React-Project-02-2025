@@ -18,4 +18,5 @@ addToCart () {},
 updateQuantity () {},
 calculateTotal () {},
 removeProduct() {},
+clearCart() {},
 });

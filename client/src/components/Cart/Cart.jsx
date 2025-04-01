@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useLatestProducts } from '../../api/productApi'
 import Spinner from '../Spinner/Spinner';
 import styles from './Cart.module.css'
@@ -6,16 +6,33 @@ import CartProduct from './CartProduct/CartProduct';
 import CartTableProduct from './CartTableProduct/CartTableProduct';
 import { Link } from 'react-router';
 import { CartContext } from '../../contexts/CartContext';
+import toast from 'react-hot-toast';
 
 export default function Cart() {
     const { latestProducts, pending } = useLatestProducts();
-    const { cartItems, calculateTotal } = useContext(CartContext);
+    const { cartItems, calculateTotal, clearCart } = useContext(CartContext);
+    const [orderMessage, setOrderMessage] = useState('');
 
     const totalPrice = calculateTotal();
+
+    const finishOrderHandler = () => {
+        clearCart();
+
+        setOrderMessage('Your order is in preview. Thank you for shopping with us!');
+
+        toast.success('Successfull finished order!');
+    }
     
     return (
             <main  className={styles['cart-main']}>
     <h1>Your Cart</h1>
+
+        {orderMessage && (
+                <div className={styles.orderMessage}>
+                    <p>{orderMessage}</p>
+                </div>
+            )}
+
         {cartItems.length > 0 
             ? (
                 
@@ -49,8 +66,7 @@ export default function Cart() {
         </tfoot>
         </table>
         <div className={styles.promoSection}>
-            {/* <button className={styles.applyPromo}>Refresh cart</button> */}
-            <button className={styles.updateCart}>Finish order</button>
+            <button className={styles.updateCart} onClick={finishOrderHandler}>Finish order</button>
             </div>
         </div>
     )
