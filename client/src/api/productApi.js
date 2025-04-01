@@ -3,7 +3,7 @@ import useAuth from "../hooks/useAuth";
 import request from "../utils/request";
 
 
-const baseUrl = 'http://localhost:3030/data/products';
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/products`;
 
 export const useProducts = () => {
     const [products, setProducts] = useState([]);

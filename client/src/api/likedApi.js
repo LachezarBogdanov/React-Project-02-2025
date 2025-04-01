@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth"
 import request from "../utils/request";
 
-const baseUrl = 'http://localhost:3030/data/favProducts';
-const productsUrl = 'http://localhost:3030/data/products';
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/favProducts`;
+const productsUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/products`;
 
 export const useSave = () => {
     const { request, _id } = useAuth();
