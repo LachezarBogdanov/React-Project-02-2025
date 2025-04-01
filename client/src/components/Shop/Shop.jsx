@@ -54,8 +54,8 @@ export default function Shop() {
     
   </section>
 
-  <section className={styles.description}>
-  </section>
+  {/* <section className={styles.description}>
+  </section> */}
 </main>
 
         </>

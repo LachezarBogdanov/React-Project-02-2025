@@ -36,13 +36,20 @@ export default function Details() {
   
   const productDeleteHandler = async () => {
 
-    await deleteGame(productId);
+    try{
 
-    setShowModal(false);
+      await deleteGame(productId);
+      
+      setShowModal(false);
+      
+      toast.success('Successfully deleted product!');
+      
+      navigate('/shop');
+      
+    } catch(err) {
 
-    toast.success('Successfully deleted product!');
-
-    navigate('/shop');
+      return toast.error(err.message);
+    }
   }
   
 
