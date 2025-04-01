@@ -43,6 +43,7 @@ export const useLogout = () => {
 
     useEffect(() => {
         if(!accessToken) {
+            userLogoutHandler();
             return;
         }
 
