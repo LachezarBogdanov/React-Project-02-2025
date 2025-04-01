@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import useAuth from "../hooks/useAuth";
 
@@ -8,13 +8,21 @@ export default function CartProvider({
 }) {
     const { isAuthenticated } = useAuth();
 
-    const [cartItems, setCartItems] = useState(() => {
-        if(!isAuthenticated) {
-            return [];
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        if (!isAuthenticated) {
+            setCartItems([]);
+            return;
         }
+
         const savedCart = localStorage.getItem('cart');
-        return savedCart ? JSON.parse(savedCart) : [];
-    });
+        if (savedCart) {
+            setCartItems(JSON.parse(savedCart));
+        } else {
+            setCartItems([]);
+        }
+    }, [isAuthenticated]);
 
     const addToCart = (product, quantity) => {
         setCartItems((prevCart) => {
