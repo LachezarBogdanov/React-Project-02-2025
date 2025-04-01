@@ -34,7 +34,6 @@ export default function Login() {
             
             navigate(-1);
         } catch (error) {
-            console.log('second');
             
             toast.error(error.message);
 
