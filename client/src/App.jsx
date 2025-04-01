@@ -28,7 +28,7 @@ function App() {
       <UserProvider>
         <CartProvider>
           <FavouriteProvider>
-        <Toaster position='top-right' />
+        <Toaster position='center' />
         <ScrollToTop />
 
         <Header />
