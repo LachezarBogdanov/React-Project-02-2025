@@ -8,13 +8,10 @@ const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
 export const useLogin = () => {
     const login = async (email, password) => {
 
-        try {
-            const result = await request.post(`${baseUrl}/login`, {email, password});
+        const result = await request.post(`${baseUrl}/login`, {email, password});
 
-            return result;
-        } catch (error) {
-            throw new Error(error);
-        }
+        return result;
+       
     }
 
     return {
@@ -31,13 +28,10 @@ export const useRegister = () => {
             return;
         }
 
-        try {
             const result = await request.post(`${baseUrl}/register`, {email, password});
 
             return result;
-        } catch (error) {
-            throw new Error(error);
-        }
+       
     }
 
     return {
@@ -59,13 +53,9 @@ export const useLogout = () => {
             }
         };
 
-        try {
-            request.get(`${baseUrl}/logout`, null, options)
+      
+        request.get(`${baseUrl}/logout`, null, options)
             .finally(userLogoutHandler)
-        } catch (error) {
-            userLogoutHandler();
-            throw new Error(error);
-        }
 
     }, [accessToken, userLogoutHandler]);
 

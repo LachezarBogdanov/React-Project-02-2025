@@ -25,13 +25,17 @@ export default function Register (){
     const registerHandler = async (formData) => {
         const values = formData;
       
-        const authData = await register(values.email, values.password, values.rePassword);
+        try {
+          const authData = await register(values.email, values.password, values.rePassword);
 
         userLoginHandler(authData);
 
         toast.success('Successfully registered!')
 
         navigate('/');
+        } catch (error) {
+          toast.error(error);
+        }
 
         return values;
     }

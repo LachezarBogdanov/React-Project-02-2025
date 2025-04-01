@@ -25,6 +25,7 @@ export default function Login() {
     const loginHandler = async (data) => {
         const values = data;
 
+        try {
             const authData = await login(values.email, values.password);
     
             userLoginHandler(authData);
@@ -32,6 +33,9 @@ export default function Login() {
             toast.success('Successfully logged in!')
     
             navigate(-1);
+        } catch (error) {
+            toast.error(error);
+        }
    
         
         return values;
