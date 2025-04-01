@@ -5,7 +5,6 @@ import Spinner from "../Spinner/Spinner";
 
 export default function Logout() {
     const { isLoggedOut } = useLogout();
-    console.log(isLoggedOut);
     
     return isLoggedOut
         ? <Navigate to="/"/>

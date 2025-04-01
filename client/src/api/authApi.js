@@ -56,6 +56,10 @@ export const useLogout = () => {
                 return userLogoutHandler();
             }
         })
+        .catch(err => {
+            console.log(err);
+            
+        })
         
     }, [accessToken, userLogoutHandler]);
 
