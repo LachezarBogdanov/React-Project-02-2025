@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import request from "../utils/request";
-import useAuth from "../hooks/useAuth";
 
 
 const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
@@ -39,7 +38,6 @@ export const useRegister = () => {
 
 export const useLogout = () => {
     const { accessToken, userLogoutHandler } = useContext(UserContext);
-    const { request } = useAuth();
 
     useEffect(() => {
         if(!accessToken) {
@@ -47,10 +45,16 @@ export const useLogout = () => {
             return;
         }
 
-        request.get(`${baseUrl}/logout`)
+        const options = {
+            headers: {
+                'X-Authorization': accessToken,
+            }
+        };
+
+        request.get(`${baseUrl}/logout`, null, options)
             .then(userLogoutHandler);
         
-    }, [accessToken, request, userLogoutHandler]);
+    }, [accessToken, userLogoutHandler]);
 
     return {
         isLoggedOut: !!accessToken,
