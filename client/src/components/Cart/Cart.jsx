@@ -23,10 +23,10 @@ export default function Cart() {
                 <table className={styles.cartTable}>
         <thead>
             <tr>
-            <th>Продукт</th>
-            <th>Цена</th>
-            <th>Количество</th>
-            <th>Общо</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>All</th>
             </tr>
         </thead>
         <tbody>

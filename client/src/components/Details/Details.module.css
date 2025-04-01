@@ -205,6 +205,7 @@ button.favourite {
         display: flex;
         flex-direction: column;
         width: 80%;
+        margin-bottom: 35em
     }
 
     .commentsSection {
@@ -217,5 +218,11 @@ button.favourite {
 
     .quantity input {
         width: 100%;
+    }
+
+    .edit {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
   }

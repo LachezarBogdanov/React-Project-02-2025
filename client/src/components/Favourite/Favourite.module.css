@@ -77,3 +77,11 @@
     font-size: 12px;
 }
 
+@media(width < 1050px) {
+    .wishlist-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
