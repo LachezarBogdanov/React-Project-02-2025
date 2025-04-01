@@ -50,20 +50,12 @@ export const useLogout = () => {
             }
         };
 
-        request.get(`${baseUrl}/logout`)
+        request.get(`${baseUrl}/logout`, null, options)
         .then(response => {
             if (response.ok) {
             return response.text();
             }
-            throw new Error('Logout failed');
         })
-        .then(text => {
-            userLogoutHandler();
-        })
-        .catch(error => {
-            console.error('Logout error:', error);
-            userLogoutHandler();
-        });
         
     }, [accessToken, userLogoutHandler]);
 
