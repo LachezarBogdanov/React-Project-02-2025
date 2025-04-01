@@ -69,12 +69,8 @@ export default function Login() {
                         required: "Password is required!",
                         minLength: {
                             value: 5,
-                            message: "Password must me at least 6 characters!"
+                            message: "Password must me at least 5 characters!"
                         },
-                        // pattern: {
-                        //     value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-={}[\]:;"'<>,.?/~`|\\])[A-Za-z0-9!@#$%^&*()_+\-={}[\]:;"'<>,.?/~`|\\]+$/,
-                        //     message: "Password must contain letters, numbers and symbols."
-                        // }
                       })}
                 />
                 <label htmlFor="password">
