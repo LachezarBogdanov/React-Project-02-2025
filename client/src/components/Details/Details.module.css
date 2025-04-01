@@ -196,6 +196,26 @@ button.favourite {
   }
   
   input[type="checkbox"]:checked + .accordionHeader + .accordionContent {
-    max-height: 200px; /* Adjust according to content */
+    max-height: 200px;
     padding: 10px 15px;
+  }
+
+  @media(width < 1050px) {
+    .product {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .commentsSection {
+        margin-top: 40em;
+    }
+
+    article.size p:nth-child(2) {
+        width: 100%;
+    }
+
+    .quantity input {
+        width: 100%;
+    }
   }

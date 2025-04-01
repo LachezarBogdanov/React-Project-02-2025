@@ -148,7 +148,9 @@ if(!product) {
   </div>
   </section>
     {isAuthenticated ? (
+      <div className={styles.commentsSection}>
       <Comments productId={productId} email={email} />
+      </div>
     )
     : null}
     </>
