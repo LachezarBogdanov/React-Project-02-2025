@@ -20,11 +20,6 @@ export default function Shop() {
 <main className={styles.shopMain}>
   <div className={styles.select}>
     <p>Showing all {products.length} products</p>
-    <select name="first-newest" id="first-newest">
-      <option value="newest">Newest</option>
-      <option value="cheapest">Cheapest</option>
-      <option value="most-expensive">Most expensive</option>
-    </select>
   </div>
 
   <section className={styles.allProducts}>
