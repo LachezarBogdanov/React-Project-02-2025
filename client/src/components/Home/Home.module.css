@@ -30,7 +30,6 @@ section.banner h1 {
     color: #ccc;
 }
 
-/* Welcome Section */
 
 section.welcome {
     display: flex;
@@ -162,7 +161,6 @@ section.welcome::after {
     font-weight: bold;
 }
 
-/* section categories  */
 
 section.categories {
     margin-top: 13em;
@@ -233,8 +231,6 @@ section.categories h1{
     background: rgb(0, 0, 0, 0.4);
 }
 
-/* section products  */
-
 section.newProducts {
     text-align: center;
     padding-bottom: 17em;
@@ -254,6 +250,53 @@ section.newProducts h1 {
     justify-content: space-evenly;
     gap: 2em;
     width: 100%;
+}
+
+@media(width < 1050px) {
+
+    img.bannerLogo {
+        display: none;
+    }
+
+    section.banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.7em;
+    }
+
+    .wrapper {
+        max-width: 80%;
+    }
+
+    article.photos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.bigPhoto {
+        display: none;
+    }
+
+section.welcome::after {
+    width: 100%;
+}
+
+div.categoriesWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    max-width: 80%;
+}
+
+.newProductsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15em;
+    align-items: center;
+}
 }
 
 

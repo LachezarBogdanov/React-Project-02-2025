@@ -14,6 +14,7 @@ section.title {
     text-align: center;
     padding-top: 2em;
     margin-bottom: 7em;
+    width: 100%;
 }
 
 section.title h1{
@@ -89,4 +90,40 @@ section.desrpition a{
     text-decoration: none;
     color: #000;
     font-weight: bold;
+}
+
+@media(width < 1050px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 100%;
+        text-align: center;
+    }
+
+    section.title p::before,
+    section.title p::after{
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer div:nth-of-type(1) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 1em;
+    }
 }
