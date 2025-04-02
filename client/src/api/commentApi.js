@@ -36,14 +36,14 @@ export const useComments = (productId) => {
 export const useCreateComment = () => {
     const { request } = useAuth();
 
-    const create = (productId, email, comment) => {
+    const create = async (productId, email, comment) => {
         const commentData = {
             productId,
             email,
             comment,
         };
 
-        return request.post(baseUrl, commentData);
+        return await request.post(baseUrl, commentData);
     }
 
     return {
