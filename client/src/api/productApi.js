@@ -78,8 +78,8 @@ export const useEditProduct = () => {
 export const useDeleteProduct = () => {
     const { request } = useAuth();
 
-    const deleteGame = (productId) => {
-        request.delete(`${baseUrl}/${productId}`)
+    const deleteGame = async (productId) => {
+        await request.delete(`${baseUrl}/${productId}`)
     };
 
     return {
