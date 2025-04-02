@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useLatestProducts } from '../../api/productApi'
 import Spinner from '../Spinner/Spinner';
 import styles from './Cart.module.css'
@@ -14,6 +14,12 @@ export default function Cart() {
     const [orderMessage, setOrderMessage] = useState('');
 
     const totalPrice = calculateTotal();
+
+    useEffect(() => {
+        return () => {
+            setOrderMessage('');
+        }
+    }, []);
 
     const finishOrderHandler = () => {
         clearCart();
