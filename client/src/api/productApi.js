@@ -54,8 +54,8 @@ export const useLatestProducts = () => {
 export const useCreateProduct = () => {
     const { request } = useAuth();
 
-    const create = (productData) => {
-        request.post(baseUrl, productData);
+    const create = async (productData) => {
+        await request.post(baseUrl, productData);
     }
 
     return {
@@ -66,8 +66,8 @@ export const useCreateProduct = () => {
 export const useEditProduct = () => {
     const { request } = useAuth();
 
-    const edit = (productId, productData) => {
-        request.put(`${baseUrl}/${productId}`, { ...productData, _id: productId });
+    const edit = async (productId, productData) => {
+        await request.put(`${baseUrl}/${productId}`, { ...productData, _id: productId });
     };
 
     return {
