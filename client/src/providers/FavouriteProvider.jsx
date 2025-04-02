@@ -13,6 +13,7 @@ export default function FavouriteProvider({
     useEffect(() => {
         if(_id) {
             const savedFavourites = sessionStorage.getItem(`favourites_${_id}`)
+            
             setFavouriteItems(savedFavourites ? JSON.parse(savedFavourites) : []);
         } else {    
             setFavouriteItems([]);
