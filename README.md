@@ -38,6 +38,11 @@ All the errors are handled like:
     [] - Try to submit forms with not valid data
     [] - Try to go to pages that you are not allowed
 
+Porfiles:
+    You can use this account to test the functionality:
+        email: admin@abv.bg
+        password: admin
+
 How to run the app:
     You can go to this link: https://softuni-whey-pro.web.app/
     For the code you can download the zip file
